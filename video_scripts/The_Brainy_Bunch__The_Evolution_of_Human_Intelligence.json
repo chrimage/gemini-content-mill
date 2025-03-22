@@ -1,0 +1,78 @@
+{
+  "title": "Brainy Bunch: Evolving Smarts",
+  "description": "Uncover the fascinating journey of human intelligence! Explore brain evolution, cognitive leaps, and the power of culture. #Anthropology #BrainEvolution #HumanIntelligence",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "What makes humans so smart? Explore the evolution of our brains.",
+      "image_description": "Opening shot: Earth zoom to human brain animation. Text overlay: \"The Brainy Bunch\".",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 2,
+      "narration": "Brain size increased dramatically in human ancestors. But size isn't everything.",
+      "image_description": "Comparative brain size illustrations: fish, reptile, mouse, chimpanzee, human.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 3,
+      "narration": "Complexity is key.  Human brains have highly developed cerebral cortex.",
+      "image_description": "Close-up 3D model of human brain, highlighting the cerebral cortex.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 4,
+      "narration": "Bipedalism freed hands, enabling tool use and brain development.",
+      "image_description": "Early hominid walking upright, using hands to manipulate a simple tool.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 5,
+      "narration": "Tool use drove problem-solving and cognitive skills in early humans.",
+      "image_description": "Visual sequence: Oldowan tools, Acheulean handaxes, showing increasing complexity.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 6,
+      "narration": "Language emerged, enabling complex communication and social cooperation.",
+      "image_description": "Animation of early humans communicating with gestures evolving into spoken language.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 7,
+      "narration": "Abstract thought allowed planning, innovation, and symbolic reasoning.",
+      "image_description": "Visuals representing abstract concepts: time, future, imagination, problem-solving.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 8,
+      "narration": "Complex social structures demanded advanced social intelligence and empathy.",
+      "image_description": "Visuals of human social interactions: cooperation, teaching, group activities.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 9,
+      "narration": "Culture transmits knowledge across generations, accelerating brain evolution.",
+      "image_description": "Visuals of cultural transmission: elders teaching young, storytelling, traditions.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 10,
+      "narration": "Cumulative culture builds upon past knowledge, creating rapid progress.",
+      "image_description": "Evolution of technology: simple tools to modern computers, showcasing progress.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 11,
+      "narration": "Brain plasticity allows lifelong learning and adaptation to new environments.",
+      "image_description": "Animation of neurons firing and forming new connections, representing plasticity.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 12,
+      "narration": "Human intelligence: a product of brain, cognition, and culture evolving together.",
+      "image_description": "Montage of images from previous segments, ending with a thoughtful human face.",
+      "duration_seconds": 5
+    }
+  ]
+}

@@ -352,6 +352,9 @@ def main():
     scripts_dir = Path("video_scripts")
     scripts_dir.mkdir(exist_ok=True)
     
+    # Get base name of output file for related files
+    output_base = Path(args.output).stem if args.output != "topic_hierarchy.json" else "topic_hierarchy"
+    
     # Process each concept into a detailed script
     video_scripts = []
     for i, concept in enumerate(concepts):

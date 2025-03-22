@@ -201,6 +201,8 @@ def parse_arguments():
     parser.add_argument("--voice", default="nova", 
                         choices=["nova", "alloy", "echo", "fable", "onyx", "shimmer"],
                         help="Voice to use for narration (default: nova)")
+    parser.add_argument("--output-dir", 
+                        help="Custom directory to save output files (default: auto-generated)")
     
     args = parser.parse_args()
     
@@ -908,15 +910,22 @@ async def main():
     """Main function to orchestrate the video creation process."""
     args = parse_arguments()
     
+    # Set up output directory
+    global output_dir
+    
+    # If custom output directory is specified, use it
+    if args.output_dir:
+        output_dir = Path(args.output_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        print(f"Using custom output directory: {output_dir}")
     # For pre-loaded script flow
-    if hasattr(args, 'script_data'):
+    elif hasattr(args, 'script_data'):
         # Get script title for the output directory
         script_title = args.script_data.get('title', 'Educational Video')
         
         # Initialize the output directory with a name based on the script title
         safe_title = ''.join(c if c.isalnum() or c in '_- ' else '_' for c in script_title)
         timestamp = time.strftime("%Y%m%d_%H%M%S")
-        global output_dir
         output_dir = Path(f"output/{safe_title.replace(' ', '_')}_{timestamp}")
         output_dir.mkdir(parents=True, exist_ok=True)
         print(f"Created output directory: {output_dir}")

@@ -1,0 +1,102 @@
+[
+  {
+    "topic": "What is Anthropology?",
+    "title": "Anthropology: Your Guide to Humanity",
+    "hook": "Ever wondered what it truly means to be human? Anthropology has the answers!",
+    "key_points": [
+      "Holistic study of humanity",
+      "Four fields of anthropology",
+      "Relevance to the modern world"
+    ]
+  },
+  {
+    "topic": "What is Anthropology?",
+    "title": "Beyond Bones and Stones: The Breadth of Anthropology",
+    "hook": "Think anthropology is just dinosaurs and digging? Think again!",
+    "key_points": [
+      "Cultural diversity and understanding",
+      "Human evolution and biology",
+      "Language and communication"
+    ]
+  },
+  {
+    "topic": "Culture and Society",
+    "title": "Culture: The Invisible Force Shaping Your Life",
+    "hook": "Culture is all around us, influencing everything we do. But what exactly is it?",
+    "key_points": [
+      "Learned and shared behavior",
+      "Culture as a system of meaning",
+      "Cultural norms and values"
+    ]
+  },
+  {
+    "topic": "Culture and Society",
+    "title": "Society vs. Culture: Untangling Human Organization",
+    "hook": "Are society and culture the same thing? Let's clarify these fundamental concepts.",
+    "key_points": [
+      "Society as social organization",
+      "Culture as shared meanings",
+      "Interaction between society and culture"
+    ]
+  },
+  {
+    "topic": "Anthropological Methods",
+    "title": "Living Like a Local: The Power of Ethnography",
+    "hook": "Imagine living in a different culture to understand it from the inside out. That's ethnography!",
+    "key_points": [
+      "Participant observation",
+      "Immersive fieldwork",
+      "Understanding emic perspectives"
+    ]
+  },
+  {
+    "topic": "Anthropological Methods",
+    "title": "From Artifacts to Ancestors: Archaeological Techniques",
+    "hook": "How do archaeologists uncover the secrets of the past? Let's explore their toolkit.",
+    "key_points": [
+      "Excavation and survey",
+      "Dating methods",
+      "Analyzing material culture"
+    ]
+  },
+  {
+    "topic": "Human Origins and Evolution",
+    "title": "Are We Just Fancy Monkeys? Exploring Human Evolution",
+    "hook": "Where do we come from? Let's trace our evolutionary journey.",
+    "key_points": [
+      "Primate origins",
+      "Key hominin ancestors",
+      "Milestones in human evolution"
+    ]
+  },
+  {
+    "topic": "Human Origins and Evolution",
+    "title": "The Brainy Bunch: The Evolution of Human Intelligence",
+    "hook": "What makes humans so smart? Explore the evolution of our remarkable brains.",
+    "key_points": [
+      "Brain size and complexity",
+      "Cognitive adaptations",
+      "The role of culture in brain evolution"
+    ]
+  },
+  {
+    "topic": "Race and Ethnicity",
+    "title": "Is Race Real? Unpacking Human Biological Variation",
+    "hook": "Are racial categories biological or social? The surprising answer...",
+    "key_points": [
+      "Race as a social construct",
+      "Biological variation is clinal",
+      "Ethnicity and cultural identity"
+    ]
+  },
+  {
+    "topic": "Race and Ethnicity",
+    "title": "Beyond Skin Deep: The Science of Human Diversity",
+    "hook": "Human diversity is beautiful and complex. Let's explore the science behind it.",
+    "key_points": [
+      "Genetic diversity within and between groups",
+      "Adaptation to different environments",
+      "Challenging racial stereotypes"
+    ]
+  }
+]

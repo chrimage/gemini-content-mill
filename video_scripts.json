@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Anthropology: Your Guide to Humanity",
+    "script_file": "video_scripts/Anthropology__Your_Guide_to_Humanity.json"
+  },
+  {
+    "title": "Beyond Bones and Stones: The Breadth of Anthropology",
+    "script_file": "video_scripts/Beyond_Bones_and_Stones__The_Breadth_of_Anthropology.json"
+  },
+  {
+    "title": "Culture: The Invisible Force Shaping Your Life",
+    "script_file": "video_scripts/Culture__The_Invisible_Force_Shaping_Your_Life.json"
+  },
+  {
+    "title": "Society vs. Culture: Untangling Human Organization",
+    "script_file": "video_scripts/Society_vs__Culture__Untangling_Human_Organization.json"
+  },
+  {
+    "title": "Living Like a Local: The Power of Ethnography",
+    "script_file": "video_scripts/Living_Like_a_Local__The_Power_of_Ethnography.json"
+  },
+  {
+    "title": "From Artifacts to Ancestors: Archaeological Techniques",
+    "script_file": "video_scripts/From_Artifacts_to_Ancestors__Archaeological_Techniques.json"
+  },
+  {
+    "title": "Are We Just Fancy Monkeys? Exploring Human Evolution",
+    "script_file": "video_scripts/Are_We_Just_Fancy_Monkeys__Exploring_Human_Evolution.json"
+  },
+  {
+    "title": "The Brainy Bunch: The Evolution of Human Intelligence",
+    "script_file": "video_scripts/The_Brainy_Bunch__The_Evolution_of_Human_Intelligence.json"
+  },
+  {
+    "title": "Is Race Real? Unpacking Human Biological Variation",
+    "script_file": "video_scripts/Is_Race_Real__Unpacking_Human_Biological_Variation.json"
+  },
+  {
+    "title": "Beyond Skin Deep: The Science of Human Diversity",
+    "script_file": "video_scripts/Beyond_Skin_Deep__The_Science_of_Human_Diversity.json"
+  }
+]

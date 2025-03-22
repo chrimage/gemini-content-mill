@@ -1,0 +1,78 @@
+{
+  "title": "Anthro: Your Human Guide",
+  "description": "Unlock the secrets of humanity with anthropology! Explore cultures, history, and our place in the world. #anthropology #humanity #culture #education",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "Ever wondered what it truly means to be human? Anthropology has the answers!",
+      "image_description": "Intriguing question mark morphing into diverse faces of people globally.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 2,
+      "narration": "Anthropology: the holistic study of humanity, across time and cultures.",
+      "image_description": "World map expanding to show diverse landscapes and people in different eras.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 3,
+      "narration": "It's holistic! Examining biology, society, culture, and history together.",
+      "image_description": "Interconnected web graphic showing branches like 'Culture,' 'Biology,' 'History,' 'Society'.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 4,
+      "narration": "Four key fields offer unique paths to understanding the human story.",
+      "image_description": "Four distinct icons representing Archaeology, Biological, Cultural, and Linguistic Anthropology.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 5,
+      "narration": "Archaeology: Digging into the past to uncover lost civilizations and artifacts.",
+      "image_description": "Archaeological dig site with researchers uncovering ancient pottery and tools.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 6,
+      "narration": "Biological Anthropology: Exploring human evolution, genetics, and adaptation.",
+      "image_description": "Timeline of human evolution from early primates to modern humans, DNA helix.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 7,
+      "narration": "Cultural Anthropology: Immersing in diverse cultures, traditions, and societies.",
+      "image_description": "Montage of global cultural practices: festivals, rituals, art, music, clothing.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 8,
+      "narration": "Linguistic Anthropology: Studying language, communication, and cultural expression.",
+      "image_description": "People communicating in different languages, writing systems, and sign language.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 9,
+      "narration": "These fields intertwine, offering a complete picture of the human experience.",
+      "image_description": "Overlapping Venn diagram of the four fields, highlighting interdisciplinary nature.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 10,
+      "narration": "Anthropology is relevant! Understanding today's global challenges and diversity.",
+      "image_description": "Modern world issues: globalization, cultural diversity, social justice, technology.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 11,
+      "narration": "From healthcare to social issues, anthropology offers crucial insights and solutions.",
+      "image_description": "Examples of applied anthropology: healthcare workers, community development projects, urban planning.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 12,
+      "narration": "Unlock humanity's secrets! Explore anthropology and your place in the world!",
+      "image_description": "Call to action screen: 'Learn More,' website link, social media icons, inspiring imagery.",
+      "duration_seconds": 5
+    }
+  ]
+}

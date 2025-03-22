@@ -1,0 +1,78 @@
+{
+  "title": "Culture: Invisible Force",
+  "description": "Uncover the hidden power of culture! Explore how it shapes our lives in just 60 seconds. #anthropology #culture #education",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "Culture surrounds us, shaping our lives. But what exactly *is* culture?",
+      "image_description": "Opening shot: Fast-paced montage of diverse people globally in various cultural settings.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 2,
+      "narration": "Culture is learned, not innate. We acquire it from family and society.",
+      "image_description": "Visual: Baby observing and interacting with family members in a cultural setting.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 3,
+      "narration": "Culture is shared. Beliefs and practices unite groups of people.",
+      "image_description": "Visual: Group of people celebrating a cultural festival or event together.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 4,
+      "narration": "Shared behaviors, like greetings, build cultural identity and connection.",
+      "image_description": "Visual: Split screen: Different cultures greeting each other (bowing, shaking hands).",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 5,
+      "narration": "Culture gives meaning to symbols, objects, and everyday actions.",
+      "image_description": "Visual: Montage of cultural symbols (flags, religious symbols, traffic signs) appearing.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 6,
+      "narration": "Values are cultural ideas about what is good, right, and desirable.",
+      "image_description": "Visual: Abstract representation of values like family, respect, honesty, community.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 7,
+      "narration": "Cultural norms are unwritten rules guiding behavior in society.",
+      "image_description": "Visual: People following social norms in different settings (queuing, table manners).",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 8,
+      "narration": "Norms vary greatly across cultures. What's normal differs!",
+      "image_description": "Visual: Contrasting images of norms in different cultures (dress codes, personal space).",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 9,
+      "narration": "Values and norms shape our perceptions and interactions daily.",
+      "image_description": "Visual: People interacting in everyday situations, influenced by norms and values.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 10,
+      "narration": "Culture subtly influences choices: food, fashion, relationships, beliefs.",
+      "image_description": "Visual: Quick cuts of everyday choices influenced by culture (food, clothing, interactions).",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 11,
+      "narration": "Culture shapes our identity, sense of belonging, and worldview.",
+      "image_description": "Visual: Diverse individuals expressing their cultural identities proudly and confidently.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 12,
+      "narration": "Culture: An invisible force, constantly shaping your life. Explore it!",
+      "image_description": "Visual: Globe with interconnected people from diverse cultures, smiling and interacting.",
+      "duration_seconds": 5
+    }
+  ]
+}
