@@ -1143,11 +1143,14 @@ async def main():
     # Set up output directory
     global output_dir
     
+    # Initialize script variable to avoid UnboundLocalError
+    script = None
+    
     # If custom output directory is specified, use it
     if args.output_dir:
         output_dir = Path(args.output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
-        print(f"Using custom output directory: {output_dir}")
+        logger.info(f"Using custom output directory: {output_dir}")
     # For pre-loaded script flow
     elif hasattr(args, 'script_data'):
         # Get script title for the output directory
@@ -1158,7 +1161,7 @@ async def main():
         timestamp = time.strftime("%Y%m%d_%H%M%S")
         output_dir = Path(f"output/{safe_title.replace(' ', '_')}_{timestamp}")
         output_dir.mkdir(parents=True, exist_ok=True)
-        print(f"Created output directory: {output_dir}")
+        logger.info(f"Created output directory: {output_dir}")
         
         # Skip concept generation, use the pre-loaded script
         script = generate_script(args.concept, args.duration, args.frames, args.style, 
@@ -1171,18 +1174,28 @@ async def main():
         # 2. Generate detailed script based on concept
         script = generate_script(args.concept, args.duration, args.frames, args.style, video_concept)
     
+    # Make sure script is properly initialized
+    if script is None:
+        logger.error("Failed to generate or load script")
+        print("❌ Error: Failed to generate or load script")
+        return
+    
     # Set global voice style if specified on command line
     global_style = None
     if args.style:
         global_style = args.style
+        logger.info(f"Using voice style override: {global_style}")
         print(f"🎙️ Using voice style override: {global_style}")
     elif "voice_style" in script:
         global_style = script["voice_style"]
+        logger.info(f"Using script-defined voice style: {global_style}")
         print(f"🎙️ Using script-defined voice style: {global_style}")
     else:
+        logger.info("Using automatic voice style detection per segment")
         print("🎙️ Using automatic voice style detection per segment")
 
     # 3. Process each frame (generate image and audio in parallel)
+    logger.info("Processing frames...")
     print("Processing frames...")
     tasks = []
     for frame in script['frames']:

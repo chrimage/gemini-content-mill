@@ -1,42 +1,42 @@
 [
   {
-    "title": "The Nile: Egypt's Lifeblood",
-    "script_file": "video_scripts/The_Nile__Egypt_s_Lifeblood.json"
+    "title": "The First Movers: Human-Powered Transport",
+    "script_file": "video_scripts/The_First_Movers__Human-Powered_Transport.json"
   },
   {
-    "title": "Deserts and Natural Barriers",
-    "script_file": "video_scripts/Deserts_and_Natural_Barriers.json"
+    "title": "Harnessing Animal Power: A Revolution in Mobility",
+    "script_file": "video_scripts/Harnessing_Animal_Power__A_Revolution_in_Mobility.json"
   },
   {
-    "title": "Egypt in Time: Kingdoms and Periods",
-    "script_file": "video_scripts/Egypt_in_Time__Kingdoms_and_Periods.json"
+    "title": "The Wheel: A Simple Invention, A Massive Impact",
+    "script_file": "video_scripts/The_Wheel__A_Simple_Invention__A_Massive_Impact.json"
   },
   {
-    "title": "Key Dynasties: Power and Change",
-    "script_file": "video_scripts/Key_Dynasties__Power_and_Change.json"
+    "title": "Early Wheeled Vehicles: Carts and Chariots",
+    "script_file": "video_scripts/Early_Wheeled_Vehicles__Carts_and_Chariots.json"
   },
   {
-    "title": "Unlocking the Past: Egyptian Sources",
-    "script_file": "video_scripts/Unlocking_the_Past__Egyptian_Sources.json"
+    "title": "Floating Beginnings: Rafts and Dugout Canoes",
+    "script_file": "video_scripts/Floating_Beginnings__Rafts_and_Dugout_Canoes.json"
   },
   {
-    "title": "Deciphering Hieroglyphs: The Rosetta Stone",
-    "script_file": "video_scripts/Deciphering_Hieroglyphs__The_Rosetta_Stone.json"
+    "title": "The Sail: Harnessing the Wind",
+    "script_file": "video_scripts/The_Sail__Harnessing_the_Wind.json"
   },
   {
-    "title": "Hieroglyphs: Pictures and Sounds",
-    "script_file": "video_scripts/Hieroglyphs__Pictures_and_Sounds.json"
+    "title": "From Trails to Roads: The Evolution of Land Routes",
+    "script_file": "video_scripts/From_Trails_to_Roads__The_Evolution_of_Land_Routes.json"
   },
   {
-    "title": "Reading Hieroglyphs: Basic Symbols",
-    "script_file": "video_scripts/Reading_Hieroglyphs__Basic_Symbols.json"
+    "title": "Bridges and Tunnels: Overcoming Obstacles",
+    "script_file": "video_scripts/Bridges_and_Tunnels__Overcoming_Obstacles.json"
   },
   {
-    "title": "Beyond Hieroglyphs: Hieratic and Demotic",
-    "script_file": "video_scripts/Beyond_Hieroglyphs__Hieratic_and_Demotic.json"
+    "title": "Stars, Sun, and Landmarks: Ancient Navigation",
+    "script_file": "video_scripts/Stars__Sun__and_Landmarks__Ancient_Navigation.json"
   },
   {
-    "title": "Ma'at: Cosmic Order and Balance",
-    "script_file": "video_scripts/Ma_at__Cosmic_Order_and_Balance.json"
+    "title": "The Compass and Sextant: Tools of Exploration",
+    "script_file": "video_scripts/The_Compass_and_Sextant__Tools_of_Exploration.json"
   }
 ]

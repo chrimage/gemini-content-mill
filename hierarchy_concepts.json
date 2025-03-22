@@ -1,102 +1,102 @@
 [
   {
-    "topic": "Geography and the Nile",
-    "title": "The Nile: Egypt's Lifeblood",
-    "hook": "How did a single river create one of history's greatest civilizations?",
+    "topic": "Human and Animal Power",
+    "title": "The First Movers: Human-Powered Transport",
+    "hook": "Before engines, how did humans travel and carry goods?",
     "key_points": [
-      "Nile's annual flood cycle",
-      "Fertile land for agriculture",
-      "Transportation and trade route"
+      "Walking and running as primary modes",
+      "Early carrying techniques",
+      "Development of simple tools for carrying"
     ]
   },
   {
-    "topic": "Geography and the Nile",
-    "title": "Deserts and Natural Barriers",
-    "hook": "Egypt wasn't just the Nile; discover how deserts protected and shaped its culture.",
+    "topic": "Human and Animal Power",
+    "title": "Harnessing Animal Power: A Revolution in Mobility",
+    "hook": "When did humans realize animals could do the heavy lifting?",
     "key_points": [
-      "Deserts as natural defenses",
-      "Limited arable land concentrated population",
-      "Oases and resource pockets"
+      "Domestication of animals for transport",
+      "Horses, oxen, camels, and their roles",
+      "Development of saddles and harnesses"
     ]
   },
   {
-    "topic": "Timeline and Dynasties",
-    "title": "Egypt in Time: Kingdoms and Periods",
-    "hook": "From pharaohs to pyramids, navigate the vast timeline of Ancient Egypt.",
+    "topic": "The Invention of the Wheel",
+    "title": "The Wheel: A Simple Invention, A Massive Impact",
+    "hook": "What was life like before the wheel, and how did it change everything?",
     "key_points": [
-      "Predynastic, Early Dynastic, Old, Middle, New Kingdoms",
-      "Intermediate Periods and Late Period",
-      "Dynasties as ruling families"
+      "Origins and early uses of the wheel",
+      "Transition from sleds to wheeled vehicles",
+      "Impact on agriculture and trade"
     ]
   },
   {
-    "topic": "Timeline and Dynasties",
-    "title": "Key Dynasties: Power and Change",
-    "hook": "Explore the rise and fall of influential dynasties that shaped Egyptian history.",
+    "topic": "The Invention of the Wheel",
+    "title": "Early Wheeled Vehicles: Carts and Chariots",
+    "hook": "From basic carts to war machines, how were early wheels used?",
     "key_points": [
-      "Old Kingdom: Pyramid building",
-      "New Kingdom: Empire and expansion",
-      "Late Period: Foreign influence"
+      "Development of carts and wagons",
+      "Chariots in warfare and sport",
+      "Early road development to support wheeled transport"
     ]
   },
   {
-    "topic": "Sources and Evidence",
-    "title": "Unlocking the Past: Egyptian Sources",
-    "hook": "How do we know what we know about Ancient Egypt? Explore the clues they left behind.",
+    "topic": "Early Watercraft",
+    "title": "Floating Beginnings: Rafts and Dugout Canoes",
+    "hook": "How did humans first conquer water for transportation?",
     "key_points": [
-      "Archaeological sites and artifacts",
-      "Hieroglyphic inscriptions and texts",
-      "Foreign accounts and records"
+      "Early rafts and their construction",
+      "Dugout canoes and their advantages",
+      "River and coastal navigation"
     ]
   },
   {
-    "topic": "Sources and Evidence",
-    "title": "Deciphering Hieroglyphs: The Rosetta Stone",
-    "hook": "The key to understanding hieroglyphs: discover the story of the Rosetta Stone.",
+    "topic": "Early Watercraft",
+    "title": "The Sail: Harnessing the Wind",
+    "hook": "When did humans learn to use wind power for water travel?",
     "key_points": [
-      "Hieroglyphs, Demotic, and Greek scripts",
-      "Champollion's decipherment",
-      "Opening up Egyptian texts"
+      "Invention and evolution of sails",
+      "Early sailing vessels",
+      "Expansion of trade routes by sea"
     ]
   },
   {
-    "topic": "Hieroglyphic Writing",
-    "title": "Hieroglyphs: Pictures and Sounds",
-    "hook": "More than just pretty pictures, hieroglyphs were a complex writing system.",
+    "topic": "Roads and Pathways",
+    "title": "From Trails to Roads: The Evolution of Land Routes",
+    "hook": "How did we move from walking on trails to building highways?",
     "key_points": [
-      "Ideograms and phonograms",
-      "Direction of writing",
-      "Used for monumental inscriptions"
+      "Early pathways and trails",
+      "Development of paved roads",
+      "Roman road system and its significance"
     ]
   },
   {
-    "topic": "Hieroglyphic Writing",
-    "title": "Reading Hieroglyphs: Basic Symbols",
-    "hook": "Start deciphering! Learn to recognize some common hieroglyphic symbols.",
+    "topic": "Roads and Pathways",
+    "title": "Bridges and Tunnels: Overcoming Obstacles",
+    "hook": "How did ancient engineers overcome natural barriers to transportation?",
     "key_points": [
-      "Ankh (life)",
-      "Eye of Horus (protection)",
-      "Scarab (rebirth)"
+      "Early bridge construction techniques",
+      "Tunnels in ancient times",
+      "Impact of infrastructure on connectivity"
     ]
   },
   {
-    "topic": "Hieratic and Demotic Scripts",
-    "title": "Beyond Hieroglyphs: Hieratic and Demotic",
-    "hook": "Discover the everyday scripts used by scribes for faster writing.",
+    "topic": "Navigation and Wayfinding",
+    "title": "Stars, Sun, and Landmarks: Ancient Navigation",
+    "hook": "How did people navigate before GPS and maps?",
     "key_points": [
-      "Hieratic: simplified hieroglyphs for papyrus",
-      "Demotic: even more cursive, for daily use",
-      "Evolution of Egyptian writing"
+      "Celestial navigation using stars and sun",
+      "Landmark-based navigation",
+      "Early mapmaking and cartography"
     ]
   },
   {
-    "topic": "Concepts of Ma'at and Divine Kingship",
-    "title": "Ma'at: Cosmic Order and Balance",
-    "hook": "What was the central principle that governed Ancient Egyptian society?",
+    "topic": "Navigation and Wayfinding",
+    "title": "The Compass and Sextant: Tools of Exploration",
+    "hook": "What inventions revolutionized long-distance navigation?",
     "key_points": [
-      "Ma'at as truth, justice, and order",
-      "Pharaoh's role in maintaining Ma'at",
-      "Importance of balance in life and cosmos"
+      "Invention and spread of the compass",
+      "Development of the sextant",
+      "Age of Exploration and improved navigation"
     ]
   }
 ]
