@@ -63,11 +63,17 @@ venv.bak/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Project specific
+# Project specific output directories
 output/
 !output/.gitkeep
+topic_output/
+video_scripts/
+hierarchy_concepts.json
+topic_hierarchy*.json
+*.log
 
 # API Keys and secrets
 *.pem
 *.key
 config.ini
+.env

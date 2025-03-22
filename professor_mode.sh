@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Set up logging
+TIMESTAMP=$(date "+%Y%m%d_%H%M%S")
+LOG_FILE="professor_mode_${TIMESTAMP}.log"
+exec > >(tee -a "$LOG_FILE") 2>&1
+echo "==============================================================="
+echo "Starting Professor Mode: $(date)"
+echo "==============================================================="
+echo "Log file: $LOG_FILE"
+
 # Make scripts executable if not already
 if [ ! -x "src/shorts_creator.py" ]; then
   chmod +x src/shorts_creator.py
@@ -17,6 +26,7 @@ function print_help {
   echo "  ./professor_mode.sh [topic]                 - Generate topic hierarchy and automatically create videos"
   echo "  ./professor_mode.sh --from-script [file]    - Create video from existing script"
   echo "  ./professor_mode.sh --generate-all          - Create videos from all scripts in video_scripts.json"
+  echo "  ./professor_mode.sh --logs [N]              - Show the last N log files (default: 5)"
   echo
   echo "Options:"
   echo "  --depth [NUMBER]     - Depth of topic hierarchy (default: 3)"
@@ -32,11 +42,73 @@ function print_help {
   echo "  ./professor_mode.sh \"Quantum Physics\" --depth 2 --breadth 3"
   echo "  ./professor_mode.sh \"Biology\" --max-videos 5 --voice echo"
   echo "  ./professor_mode.sh --from-script topic_output/quantum_physics/scripts/entanglement.json --voice nova"
+  echo "  ./professor_mode.sh --logs 10               - Show the last 10 log files"
+}
+
+# Function to list and display log files
+function show_logs {
+  # Default to showing 5 most recent logs if not specified
+  NUM_LOGS=${1:-5}
+  
+  echo "Showing $NUM_LOGS most recent log files:"
+  echo "==============================================================="
+  
+  # Find all log files and sort by modification time (newest first)
+  mapfile -t LOG_FILES < <(find . -maxdepth 1 -name "*.log" | sort -r -t_ -k2,2)
+  
+  # Check if we found any logs
+  if [ ${#LOG_FILES[@]} -eq 0 ]; then
+    echo "No log files found."
+    return
+  fi
+  
+  # Output summary of most recent logs
+  COUNT=0
+  for LOG in "${LOG_FILES[@]}"; do
+    if [ $COUNT -lt $NUM_LOGS ]; then
+      LOG_NAME=$(basename "$LOG")
+      LOG_SIZE=$(du -h "$LOG" | cut -f1)
+      FIRST_LINE=$(head -n 1 "$LOG")
+      TIMESTAMP=$(echo "$FIRST_LINE" | grep -oE "[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}")
+      LAST_LINE=$(tail -n 1 "$LOG")
+      
+      echo "[$((COUNT+1))] $LOG_NAME ($LOG_SIZE) - $TIMESTAMP"
+      COUNT=$((COUNT+1))
+    else
+      break
+    fi
+  done
+  
+  # Ask which log to view
+  echo "==============================================================="
+  echo "Enter log number to view (or 'q' to quit): "
+  read -r SELECTION
+  
+  if [[ "$SELECTION" =~ ^[0-9]+$ ]] && [ "$SELECTION" -ge 1 ] && [ "$SELECTION" -le $COUNT ]; then
+    LOG_TO_VIEW="${LOG_FILES[$((SELECTION-1))]}"
+    echo "==============================================================="
+    echo "Viewing log: $LOG_TO_VIEW"
+    echo "==============================================================="
+    less "$LOG_TO_VIEW"
+  elif [ "$SELECTION" != "q" ]; then
+    echo "Invalid selection."
+  fi
 }
 
 # Check if no arguments or help requested
 if [ $# -eq 0 ] || [ "$1" == "--help" ]; then
   print_help
+  exit 0
+fi
+
+# Check if logs command is used
+if [ "$1" == "--logs" ]; then
+  # If a number is provided, use it, otherwise default is handled in the function
+  if [ -n "$2" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
+    show_logs "$2"
+  else
+    show_logs
+  fi
   exit 0
 fi
 

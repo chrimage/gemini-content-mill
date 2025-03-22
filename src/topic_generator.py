@@ -11,11 +11,27 @@ import os
 import time
 import random
 import sys
+import logging
 from pathlib import Path
+from datetime import datetime
 
 import google.genai as genai
 from google.genai import types
 from dotenv import load_dotenv
+
+# Set up logging
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+log_file = f"topic_generator_{timestamp}.log"
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+logger.info(f"Starting topic_generator.py - Log file: {log_file}")
 
 # Load environment variables
 load_dotenv()

@@ -12,14 +12,30 @@ import sys
 import time
 import random
 import textwrap
+import logging
 from io import BytesIO
 from pathlib import Path
+from datetime import datetime
 
 import google.genai as genai
 import openai
 from dotenv import load_dotenv
 from google.genai import types
 from PIL import Image
+
+# Set up logging
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+log_file = f"shorts_creator_{timestamp}.log"
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+logger.info(f"Starting shorts_creator.py - Log file: {log_file}")
 
 # Defer heavy imports until actually needed
 # This speeds up startup and allows for error messages before these libraries load
@@ -164,7 +180,7 @@ def api_call_with_backoff(func, *args, max_retries=5, initial_delay=2.0, max_del
             
             # If this is the last retry, re-raise the exception
             if retries == max_retries - 1:
-                print(f"Failed after {retries+1} attempts: {error_type}: {error_str}")
+                logger.error(f"Failed after {retries+1} attempts: {error_type}: {error_str}")
                 raise
             
             # Check if this is a rate limit or other retriable error
@@ -178,8 +194,8 @@ def api_call_with_backoff(func, *args, max_retries=5, initial_delay=2.0, max_del
                 jitter = random.uniform(0.8, 1.2)
                 sleep_time = min(delay * jitter, max_delay)
                 
-                print(f"API call failed (retry {retries+1}/{max_retries}): {error_type}")
-                print(f"Waiting {sleep_time:.1f}s before retrying...")
+                logger.warning(f"API call failed (retry {retries+1}/{max_retries}): {error_type}")
+                logger.info(f"Waiting {sleep_time:.1f}s before retrying...")
                 
                 time.sleep(sleep_time)
                 
