@@ -1,0 +1,91 @@
+{
+  "title": "Rosetta Stone: Hieroglyph Key",
+  "description": "Unlocking ancient Egypt! Discover how the Rosetta Stone deciphered hieroglyphs. #RosettaStone #Hieroglyphs #AncientEgypt",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "Unlock hieroglyphs: the Rosetta Stone's story reveals ancient secrets.",
+      "image_description": "Intriguing close-up of hieroglyphs, then transition to Rosetta Stone.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the video topic and the Rosetta Stone's importance."
+    },
+    {
+      "frame_id": 2,
+      "narration": "For centuries, hieroglyphs were a beautiful, yet unreadable script.",
+      "image_description": "Visually appealing shot of hieroglyphs on a temple wall or papyrus.",
+      "duration_seconds": 5,
+      "educational_value": "Highlights the mystery and challenge of hieroglyphs."
+    },
+    {
+      "frame_id": 3,
+      "narration": "Imagine a lost language, its stories locked away for millennia.",
+      "image_description": "Animated lock and key graphic with hieroglyphs on the lock.",
+      "duration_seconds": 5,
+      "educational_value": "Emphasizes the historical significance of undeciphered hieroglyphs."
+    },
+    {
+      "frame_id": 4,
+      "narration": "Then, in 1799, a French soldier made an incredible discovery.",
+      "image_description": "Depiction of the Rosetta Stone being discovered by soldiers in Egypt.",
+      "duration_seconds": 5,
+      "educational_value": "Sets the scene for the Rosetta Stone's discovery."
+    },
+    {
+      "frame_id": 5,
+      "narration": "The Rosetta Stone held the same text in three scripts.",
+      "image_description": "Show the Rosetta Stone with labels highlighting Hieroglyphs, Demotic, and Greek sections.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the key feature of the Rosetta Stone: three scripts."
+    },
+    {
+      "frame_id": 6,
+      "narration": "Hieroglyphs, Demotic \u2013 Egyptian scripts \u2013 and ancient Greek.",
+      "image_description": "Close-up views of each script section on the Rosetta Stone, labeled clearly.",
+      "duration_seconds": 5,
+      "educational_value": "Identifies and differentiates the three scripts on the stone."
+    },
+    {
+      "frame_id": 7,
+      "narration": "Greek was known! This provided the crucial key for decipherment.",
+      "image_description": "Highlight the Greek text section, perhaps with a subtle animation.",
+      "duration_seconds": 5,
+      "educational_value": "Explains why the Greek script was essential for understanding."
+    },
+    {
+      "frame_id": 8,
+      "narration": "Linguist Champollion dedicated years to unlocking the ancient code.",
+      "image_description": "Portrait of Jean-Fran\u00e7ois Champollion, then him studying the Rosetta Stone.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces Champollion and his crucial role in decipherment."
+    },
+    {
+      "frame_id": 9,
+      "narration": "Champollion realized hieroglyphs were phonetic and symbolic.",
+      "image_description": "Animation showing hieroglyphs transitioning into phonetic sounds and symbols.",
+      "duration_seconds": 5,
+      "educational_value": "Explains Champollion's breakthrough understanding of hieroglyphs."
+    },
+    {
+      "frame_id": 10,
+      "narration": "By comparing scripts, he painstakingly deciphered the hieroglyphs.",
+      "image_description": "Visual representation of Champollion comparing the three scripts, diagrams.",
+      "duration_seconds": 5,
+      "educational_value": "Shows the process of decipherment through script comparison."
+    },
+    {
+      "frame_id": 11,
+      "narration": "The Rosetta Stone opened up vast amounts of Egyptian texts.",
+      "image_description": "Show examples of newly readable Egyptian texts: papyri, tomb inscriptions.",
+      "duration_seconds": 5,
+      "educational_value": "Illustrates the impact of decipherment on accessing Egyptian knowledge."
+    },
+    {
+      "frame_id": 12,
+      "narration": "Thanks to the Rosetta Stone, ancient Egypt speaks to us today.",
+      "image_description": "Montage of iconic Egyptian imagery: pyramids, pharaohs, artifacts. End screen with title.",
+      "duration_seconds": 5,
+      "educational_value": "Summarizes the Rosetta Stone's legacy and its impact on Egyptology."
+    }
+  ],
+  "voice_style": "professor"
+}

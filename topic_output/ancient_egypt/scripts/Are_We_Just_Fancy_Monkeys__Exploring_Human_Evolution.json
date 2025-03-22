@@ -1,0 +1,78 @@
+{
+  "title": "Fancy Monkeys? Human Evolution Explained",
+  "description": "Explore our evolutionary journey from primates to modern humans in 60 seconds! #Anthropology #HumanEvolution #Science",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "Where do we come from? Let's trace our evolutionary journey.",
+      "image_description": "Opening shot of Earth from space, zooming into a lush African landscape.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 2,
+      "narration": "Millions of years ago, our story begins with early primates.",
+      "image_description": "Montage of diverse primates: lemurs, monkeys, tarsiers in their natural habitats.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 3,
+      "narration": "We share a common ancestor with apes, not descended from monkeys.",
+      "image_description": "Simple evolutionary tree diagram showing divergence of apes and monkeys from a common ancestor.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 4,
+      "narration": "Bipedalism emerged. *Australopithecus* walked upright in Africa.",
+      "image_description": "Reconstruction of *Australopithecus* (e.g., Lucy) walking upright in a savanna environment.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 5,
+      "narration": "*Homo habilis* used tools, a key innovation in human development.",
+      "image_description": "Illustration of *Homo habilis* using simple stone tools to butcher meat.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 6,
+      "narration": "*Homo erectus* migrated out of Africa, spreading human lineage.",
+      "image_description": "Animated map showing *Homo erectus* migration routes out of Africa to Asia and Europe.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 7,
+      "narration": "Brain size increased significantly within the *Homo* genus.",
+      "image_description": "Comparative skulls showing increasing brain size from *Australopithecus* to *Homo sapiens*.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 8,
+      "narration": "Neanderthals, our close cousins, thrived in Europe and Asia.",
+      "image_description": "Reconstruction of Neanderthals in a cold environment, hunting or making tools.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 9,
+      "narration": "*Homo sapiens* evolved in Africa, developing complex culture.",
+      "image_description": "Early *Homo sapiens* cave paintings and artifacts, showcasing artistic expression.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 10,
+      "narration": "*Homo sapiens* migrated globally, adapting to diverse climates.",
+      "image_description": "Animated map showing *Homo sapiens* global migration and spread across continents.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 11,
+      "narration": "Modern humans: complex language, technology, and global societies.",
+      "image_description": "Montage of diverse modern humans engaged in various activities: technology, art, science.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 12,
+      "narration": "From primates to us, a remarkable journey. Are we just fancy monkeys?",
+      "image_description": "Split screen: one side a chimpanzee face, the other a human face, dissolving into a question mark.",
+      "duration_seconds": 5
+    }
+  ]
+}

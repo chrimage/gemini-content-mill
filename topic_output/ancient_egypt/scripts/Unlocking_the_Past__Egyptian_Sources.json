@@ -1,0 +1,91 @@
+{
+  "title": "Egypt's Secrets Revealed",
+  "description": "Explore the fascinating sources that unlock the mysteries of Ancient Egypt! #AncientEgypt #Archaeology #History",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "How do we know about Ancient Egypt? Clues are all around us.",
+      "image_description": "Opening shot of the Nile River flowing through a desert landscape, pyramids in the distance.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the question of how we know about Ancient Egypt."
+    },
+    {
+      "frame_id": 2,
+      "narration": "Archaeological sites are treasure troves of ancient artifacts.",
+      "image_description": "Aerial view of the Giza pyramid complex, highlighting the scale of the site.",
+      "duration_seconds": 5,
+      "educational_value": "Establishes archaeological sites as a primary source of information."
+    },
+    {
+      "frame_id": 3,
+      "narration": "From pottery shards to grand temples, artifacts tell silent stories.",
+      "image_description": "Montage of various artifacts: pottery, jewelry, tools, statues, close-up on a scarab beetle.",
+      "duration_seconds": 5,
+      "educational_value": "Illustrates the diversity of artifacts and their informative nature."
+    },
+    {
+      "frame_id": 4,
+      "narration": "Hieroglyphs, their picture writing, are keys to understanding.",
+      "image_description": "Close-up on a wall covered in hieroglyphic inscriptions, pan across the text.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces hieroglyphs as a crucial source of written information."
+    },
+    {
+      "frame_id": 5,
+      "narration": "Inscriptions on tombs and temples reveal royal histories.",
+      "image_description": "Interior shot of a tomb with hieroglyphic inscriptions and painted scenes.",
+      "duration_seconds": 5,
+      "educational_value": "Shows hieroglyphs in context and their historical significance."
+    },
+    {
+      "frame_id": 6,
+      "narration": "Papyrus scrolls preserve everyday life, beliefs, and knowledge.",
+      "image_description": "Animated sequence showing papyrus being made, then a close-up of a papyrus scroll with hieratic script.",
+      "duration_seconds": 5,
+      "educational_value": "Explains papyrus as a writing material and its role in preserving knowledge."
+    },
+    {
+      "frame_id": 7,
+      "narration": "The Rosetta Stone unlocked the secrets of hieroglyphic script.",
+      "image_description": "Image of the Rosetta Stone with text overlay highlighting the three scripts.",
+      "duration_seconds": 5,
+      "educational_value": "Highlights the importance of the Rosetta Stone for deciphering hieroglyphs."
+    },
+    {
+      "frame_id": 8,
+      "narration": "Ancient Greek writers like Herodotus visited and documented Egypt.",
+      "image_description": "Image of a bust of Herodotus or a depiction of a Greek scholar writing.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces foreign accounts as a valuable perspective on Egypt."
+    },
+    {
+      "frame_id": 9,
+      "narration": "Their accounts describe customs, geography, and Egyptian society.",
+      "image_description": "Illustration depicting a scene from Herodotus's descriptions of Egypt, e.g., mummification or Nile floods.",
+      "duration_seconds": 5,
+      "educational_value": "Shows the type of information found in foreign accounts."
+    },
+    {
+      "frame_id": 10,
+      "narration": "Roman records also provide insights into later Egyptian history.",
+      "image_description": "Roman-era Egyptian artifacts or a Roman inscription mentioning Egypt, perhaps in Latin.",
+      "duration_seconds": 5,
+      "educational_value": "Extends foreign accounts to include Roman perspectives and later periods."
+    },
+    {
+      "frame_id": 11,
+      "narration": "Combining these sources gives us a rich picture of Ancient Egypt.",
+      "image_description": "Split screen showing artifacts, hieroglyphs, and a foreign text side-by-side.",
+      "duration_seconds": 5,
+      "educational_value": "Emphasizes the importance of using multiple sources for a complete understanding."
+    },
+    {
+      "frame_id": 12,
+      "narration": "Explore the clues and unlock the past of Ancient Egypt!",
+      "image_description": "Panoramic view of an Egyptian archaeological site at sunset, fading to black.",
+      "duration_seconds": 5,
+      "educational_value": "Concluding statement reinforcing the hook and encouraging further exploration."
+    }
+  ],
+  "voice_style": "professor"
+}

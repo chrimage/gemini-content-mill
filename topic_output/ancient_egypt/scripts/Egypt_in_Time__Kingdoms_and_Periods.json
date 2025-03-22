@@ -1,0 +1,91 @@
+{
+  "title": "Egypt's Kingdoms: Time Tour",
+  "description": "Explore the kingdoms of Ancient Egypt in 60 seconds! #AncientEgypt #History #EgyptTimeline",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "From pharaohs to pyramids, navigate the vast timeline of Ancient Egypt.",
+      "image_description": "Opening title card: 'Egypt in Time: Kingdoms and Periods'. Pyramids and hieroglyphs background.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the video topic and hook."
+    },
+    {
+      "frame_id": 2,
+      "narration": "Ancient Egypt's story unfolds in kingdoms and periods, ruled by dynasties.",
+      "image_description": "Animated timeline graphic appearing, showing major periods. Dynasty family tree icon.",
+      "duration_seconds": 5,
+      "educational_value": "Sets the structure: kingdoms, periods, and dynasties."
+    },
+    {
+      "frame_id": 3,
+      "narration": "Before kingdoms, Predynastic Egypt: villages along the fertile Nile River.",
+      "image_description": "Illustration of Predynastic villages along the Nile, early farmers and boats.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the pre-kingdom era and Nile's importance."
+    },
+    {
+      "frame_id": 4,
+      "narration": "Early Dynastic Period: Upper and Lower Egypt unite under one pharaoh.",
+      "image_description": "Depiction of Narmer Palette or symbolic unification of two lands.",
+      "duration_seconds": 5,
+      "educational_value": "Explains the unification and start of dynasties."
+    },
+    {
+      "frame_id": 5,
+      "narration": "Old Kingdom: The age of pyramid building, showcasing pharaonic power.",
+      "image_description": "Iconic image of the Great Pyramids of Giza and the Sphinx.",
+      "duration_seconds": 5,
+      "educational_value": "Highlights the Old Kingdom and pyramid construction."
+    },
+    {
+      "frame_id": 6,
+      "narration": "First Intermediate Period: Kingdom fractured, decentralization, and instability.",
+      "image_description": "Map showing fragmented Egypt, possibly with symbols of conflict.",
+      "duration_seconds": 5,
+      "educational_value": "Explains the first period of disunity and chaos."
+    },
+    {
+      "frame_id": 7,
+      "narration": "Middle Kingdom: Reunification and stability restored, golden age of art.",
+      "image_description": "Artwork from the Middle Kingdom, statues, jewelry, and prosperous scenes.",
+      "duration_seconds": 5,
+      "educational_value": "Showcases the Middle Kingdom's recovery and culture."
+    },
+    {
+      "frame_id": 8,
+      "narration": "Second Intermediate Period: Hyksos invasion, foreign rulers in Lower Egypt.",
+      "image_description": "Depiction of Hyksos chariots or foreign rulers in Egyptian style.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the Hyksos and foreign influence."
+    },
+    {
+      "frame_id": 9,
+      "narration": "New Kingdom: Egypt becomes an empire, expansion and famous pharaohs.",
+      "image_description": "Map of New Kingdom empire, images of pharaohs like Tutankhamun.",
+      "duration_seconds": 5,
+      "educational_value": "Highlights the New Kingdom's imperial power and fame."
+    },
+    {
+      "frame_id": 10,
+      "narration": "Third Intermediate Period: Kingdom weakens, divided again, multiple rulers.",
+      "image_description": "Map showing divided Egypt again, different ruling centers.",
+      "duration_seconds": 5,
+      "educational_value": "Explains the decline and fragmentation after the New Kingdom."
+    },
+    {
+      "frame_id": 11,
+      "narration": "Late Period: Foreign powers dominate Egypt, Persians, Greeks, and Romans.",
+      "image_description": "Images representing Persian, Greek, and Roman influence in Egypt.",
+      "duration_seconds": 5,
+      "educational_value": "Covers the period of foreign domination in the Late Period."
+    },
+    {
+      "frame_id": 12,
+      "narration": "From kingdoms to periods, Egypt's long history shaped our world. Explore more!",
+      "image_description": "Final screen: Timeline graphic recap, call to action to learn more, end screen.",
+      "duration_seconds": 5,
+      "educational_value": "Summarizes the timeline and encourages further learning."
+    }
+  ],
+  "voice_style": "professor"
+}

@@ -1,0 +1,78 @@
+{
+  "title": "Unearthing the Past: Archaeology Toolkit",
+  "description": "Discover the fascinating techniques archaeologists use to uncover history! From digging to dating, explore the toolkit. #archaeology #anthropology #history #education",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "How do archaeologists uncover the secrets of the past? Let's explore their toolkit.",
+      "image_description": "Opening shot: Dynamic montage of various archaeological sites globally (pyramids, ruins, caves).",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 2,
+      "narration": "Archaeology: Uncovering past peoples and cultures through their material remains.",
+      "image_description": "Text overlay defining 'Archaeology' on screen, with background image of an archaeologist carefully brushing dirt off an artifact.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 3,
+      "narration": "Surveying: Walking the land, identifying potential archaeological sites.",
+      "image_description": "Archaeologists walking across a field, using maps, GPS devices, and noting surface finds.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 4,
+      "narration": "Excavation: Carefully digging to reveal buried artifacts and structures.",
+      "image_description": "Time-lapse of an archaeological excavation in progress, showing different layers being unearthed.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 5,
+      "narration": "Stratigraphy: Analyzing soil layers to understand time sequence.",
+      "image_description": "Diagram of soil layers (stratigraphy) with artifacts embedded in different strata, illustrating relative dating.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 6,
+      "narration": "Radiocarbon Dating: Measuring carbon-14 decay to date organic materials.",
+      "image_description": "Animation explaining the process of radiocarbon dating, showing carbon-14 decay in organic matter.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 7,
+      "narration": "Dendrochronology: Tree-ring dating for precise timelines using wood.",
+      "image_description": "Close-up of tree rings, then an archaeologist examining a wooden beam sample for dendrochronology.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 8,
+      "narration": "Pottery Analysis: Styles and changes reveal culture, trade, and time periods.",
+      "image_description": "Various pottery shards being examined and categorized, showing different styles and decorations.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 9,
+      "narration": "Stone Tools: Analyzing tool types to understand technology and skills.",
+      "image_description": "Examples of different types of stone tools (arrowheads, hand axes) and an archaeologist studying them.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 10,
+      "narration": "Bone Analysis: Studying bones to learn about diet, health, and activities.",
+      "image_description": "Archaeologist carefully examining and measuring animal or human bones in a lab setting.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 11,
+      "narration": "Artifacts to Ancestors: Connecting material finds to understand past societies.",
+      "image_description": "Visual connecting artifacts (pottery, tools, bones) to a reconstructed image of past people in their environment.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 12,
+      "narration": "Archaeology: Unlocking the human story, one artifact at a time. Explore more!",
+      "image_description": "Concluding screen with a call to action: 'Learn More About Archaeology' with links to resources, museums, or universities.",
+      "duration_seconds": 5
+    }
+  ]
+}

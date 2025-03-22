@@ -1,0 +1,91 @@
+{
+  "title": "Hieroglyphs: Pictures & Sounds",
+  "description": "Uncover the secrets of hieroglyphs! Learn how these ancient Egyptian symbols were more than just pretty pictures. #hieroglyphs #ancientegypt #history",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "Hieroglyphs: more than just pretty pictures, a complex writing system.",
+      "image_description": "Close-up of detailed hieroglyphs on a stone wall, then pull back to show a wider view of the wall.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces hieroglyphs as a sophisticated writing system, not just decoration."
+    },
+    {
+      "frame_id": 2,
+      "narration": "Ancient Egyptians used hieroglyphs for thousands of years to write.",
+      "image_description": "Timeline graphic showing the duration of hieroglyphic usage in Ancient Egypt, from early dynastic to Roman period.",
+      "duration_seconds": 5,
+      "educational_value": "Establishes the long history and importance of hieroglyphs in ancient Egypt."
+    },
+    {
+      "frame_id": 3,
+      "narration": "Some hieroglyphs are ideograms, representing objects or ideas directly.",
+      "image_description": "Animated examples of ideograms: sun (circle), eye (eye), water (wavy lines), with their meanings appearing.",
+      "duration_seconds": 5,
+      "educational_value": "Explains ideograms as picture-symbols representing concepts."
+    },
+    {
+      "frame_id": 4,
+      "narration": "Others are phonograms, symbols for sounds, like letters in our alphabet.",
+      "image_description": "Animated examples of phonograms: mouth (R sound), water (N sound), with phonetic sounds displayed.",
+      "duration_seconds": 5,
+      "educational_value": "Explains phonograms as sound-symbols, similar to letters."
+    },
+    {
+      "frame_id": 5,
+      "narration": "Hieroglyphic writing often combines ideograms and phonograms together.",
+      "image_description": "Example of a hieroglyphic word combining an ideogram and phonograms, with labels explaining each part.",
+      "duration_seconds": 5,
+      "educational_value": "Shows the combination of ideograms and phonograms in actual words."
+    },
+    {
+      "frame_id": 6,
+      "narration": "Egyptians typically wrote hieroglyphs from right to left, sometimes top to bottom.",
+      "image_description": "Animated text showing right-to-left and top-to-bottom writing directions with arrows indicating flow.",
+      "duration_seconds": 5,
+      "educational_value": "Explains the common writing directions in hieroglyphic script."
+    },
+    {
+      "frame_id": 7,
+      "narration": "To read, look at the animal or human figures \u2013 they face the start.",
+      "image_description": "Example of hieroglyphic text with animal figures clearly facing the direction of reading (right to left).",
+      "duration_seconds": 5,
+      "educational_value": "Provides a visual cue for determining the direction of reading."
+    },
+    {
+      "frame_id": 8,
+      "narration": "Hieroglyphs were prominently used for monumental inscriptions on stone.",
+      "image_description": "Wide shot of a grand Egyptian temple wall or obelisk covered in hieroglyphic inscriptions.",
+      "duration_seconds": 5,
+      "educational_value": "Highlights the use of hieroglyphs in monumental and public contexts."
+    },
+    {
+      "frame_id": 9,
+      "narration": "Decorating tombs and temples, honoring pharaohs and recording history.",
+      "image_description": "Interior shot of a tomb or temple with hieroglyphs, emphasizing their decorative and historical purpose.",
+      "duration_seconds": 5,
+      "educational_value": "Explains the purpose of hieroglyphs in religious and historical records."
+    },
+    {
+      "frame_id": 10,
+      "narration": "The Rosetta Stone unlocked the code of hieroglyphs in the 1800s.",
+      "image_description": "Image of the Rosetta Stone with close-ups highlighting the three scripts: Hieroglyphic, Demotic, and Greek.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the Rosetta Stone and its crucial role in decipherment."
+    },
+    {
+      "frame_id": 11,
+      "narration": "Today, we can read and understand hieroglyphs thanks to Egyptology.",
+      "image_description": "Modern Egyptologist pointing at hieroglyphs in a textbook or on a monument, explaining them.",
+      "duration_seconds": 5,
+      "educational_value": "Shows that hieroglyphs are now understood and studied by experts."
+    },
+    {
+      "frame_id": 12,
+      "narration": "Hieroglyphs: a beautiful and complex writing system from ancient Egypt.",
+      "image_description": "Montage of various beautiful hieroglyphic examples, ending with a panoramic view of pyramids at sunset.",
+      "duration_seconds": 5,
+      "educational_value": "Summarizes the beauty, complexity, and lasting legacy of hieroglyphs."
+    }
+  ],
+  "voice_style": "professor"
+}

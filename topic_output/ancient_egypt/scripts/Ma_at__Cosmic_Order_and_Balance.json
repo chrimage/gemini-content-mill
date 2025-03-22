@@ -1,0 +1,91 @@
+{
+  "title": "Ma'at: Egyptian Order",
+  "description": "Discover Ma'at, the central principle of Ancient Egypt. Learn about truth, justice, and balance! #AncientEgypt #Maat #CosmicOrder",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "What principle governed Ancient Egyptian society for millennia?",
+      "image_description": "Intriguing close-up of ancient Egyptian hieroglyphs, slowly zooming out to reveal a grand temple.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the central question and topic of Ancient Egyptian principles."
+    },
+    {
+      "frame_id": 2,
+      "narration": "It was Ma'at: truth, justice, cosmic order, and balance.",
+      "image_description": "Animated text overlay defining 'Ma'at' with keywords: Truth, Justice, Order, Balance. Background of papyrus texture.",
+      "duration_seconds": 5,
+      "educational_value": "Defines Ma'at and introduces its core concepts."
+    },
+    {
+      "frame_id": 3,
+      "narration": "Ma'at was more than law; it was the fundamental cosmic order.",
+      "image_description": "Visual representation of the cosmos with stars and planets, transitioning to an image of the Nile River flowing smoothly.",
+      "duration_seconds": 5,
+      "educational_value": "Explains Ma'at as a cosmic principle beyond just legal codes."
+    },
+    {
+      "frame_id": 4,
+      "narration": "Represented by a feather, Ma'at symbolized harmony and equilibrium.",
+      "image_description": "Elegant animation of the feather of Ma'at, floating gently against a blue sky background.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the symbol of Ma'at and its meaning of harmony."
+    },
+    {
+      "frame_id": 5,
+      "narration": "The Pharaoh's primary duty was to uphold Ma'at on Earth.",
+      "image_description": "Image of a Pharaoh in regal attire performing a ritual, possibly offering to a deity.",
+      "duration_seconds": 5,
+      "educational_value": "Highlights the Pharaoh's crucial role in maintaining Ma'at."
+    },
+    {
+      "frame_id": 6,
+      "narration": "He was the link between the divine order and human society.",
+      "image_description": "Visual connection drawn between the Pharaoh and the cosmos above, then down to scenes of Egyptian daily life.",
+      "duration_seconds": 5,
+      "educational_value": "Explains the Pharaoh's position as intermediary for Ma'at."
+    },
+    {
+      "frame_id": 7,
+      "narration": "Pharaoh ensured justice, prosperity, and stability through Ma'at.",
+      "image_description": "Montage of scenes depicting justice being served, bountiful harvests, and peaceful Egyptian life.",
+      "duration_seconds": 5,
+      "educational_value": "Shows the practical outcomes of Pharaoh upholding Ma'at."
+    },
+    {
+      "frame_id": 8,
+      "narration": "Balance was vital in all aspects of Egyptian life and cosmos.",
+      "image_description": "Visual representation of balanced scales, transitioning to scenes of balanced ecosystems in Egypt.",
+      "duration_seconds": 5,
+      "educational_value": "Emphasizes the importance of balance in Ma'at's philosophy."
+    },
+    {
+      "frame_id": 9,
+      "narration": "From the Nile's floods to social interactions, balance was key.",
+      "image_description": "Scenes of the Nile's annual flood cycle and Egyptians interacting respectfully in daily life.",
+      "duration_seconds": 5,
+      "educational_value": "Provides examples of balance in nature and society within Ma'at."
+    },
+    {
+      "frame_id": 10,
+      "narration": "Disrupting Ma'at brought chaos, imbalance, and negative consequences.",
+      "image_description": "Visual depiction of chaos - storms, social unrest - contrasting with previous balanced scenes.",
+      "duration_seconds": 5,
+      "educational_value": "Explains the negative repercussions of violating Ma'at."
+    },
+    {
+      "frame_id": 11,
+      "narration": "Ma'at shaped Egyptian values, law, and their worldview.",
+      "image_description": "Collage of Egyptian art, legal texts (if visually appropriate), and cosmological depictions.",
+      "duration_seconds": 5,
+      "educational_value": "Summarizes Ma'at's broad influence on Egyptian culture."
+    },
+    {
+      "frame_id": 12,
+      "narration": "Ma'at: the enduring principle of order and balance in Ancient Egypt.",
+      "image_description": "Final shot of the feather of Ma'at with a panoramic view of ancient Egyptian monuments in the background.",
+      "duration_seconds": 5,
+      "educational_value": "Concludes the video by reiterating Ma'at's lasting significance."
+    }
+  ],
+  "voice_style": "professor"
+}

@@ -1,0 +1,78 @@
+{
+  "title": "Beyond Skin Deep: Human Diversity",
+  "description": "Explore the fascinating science of human diversity and challenge racial stereotypes. Learn about genetics and adaptation! #Anthropology #HumanDiversity #Science",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "Human diversity is beautiful and complex. Let's explore the science behind it.",
+      "image_description": "Montage of diverse faces from different cultures and backgrounds.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 2,
+      "narration": "Anthropology studies humanity \u2013 our origins, societies, and diverse cultures.",
+      "image_description": "Animated globe rotating, highlighting different continents and cultures.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 3,
+      "narration": "Appearances are just the surface. Real human diversity lies much deeper.",
+      "image_description": "Visual transition from skin surface zooming into DNA strands.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 4,
+      "narration": "Genetics reveals incredible variation within and between human groups.",
+      "image_description": "Abstract DNA visualization showing diverse genetic sequences.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 5,
+      "narration": "Most genetic differences exist *within* populations, not just between them.",
+      "image_description": "Group of people from the same region showing diverse physical traits.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 6,
+      "narration": "Geographic separation leads to some genetic differences between groups.",
+      "image_description": "Map showing human migration patterns and genetic variation across regions.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 7,
+      "narration": "Human traits often reflect adaptation to diverse environments, like climate.",
+      "image_description": "Juxtaposition of people in different climates (cold, hot) with adaptive traits.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 8,
+      "narration": "Skin color, for example, is largely adapted to different levels of UV radiation.",
+      "image_description": "Visual spectrum of UV radiation with skin tones correlated to latitude.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 9,
+      "narration": "\"Race\" is a social construct, not a biologically meaningful category.",
+      "image_description": "Deconstructing a racial classification chart, showing its arbitrary nature.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 10,
+      "narration": "Science challenges racial stereotypes, revealing their lack of factual basis.",
+      "image_description": "Images of common racial stereotypes being crossed out or debunked.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 11,
+      "narration": "Celebrating human variation enriches our world and understanding of humanity.",
+      "image_description": "Diverse group of people collaborating and interacting positively.",
+      "duration_seconds": 5
+    },
+    {
+      "frame_id": 12,
+      "narration": "Anthropology helps us appreciate the science and beauty of human diversity.",
+      "image_description": "Text overlay: \"Anthropology: Understanding Human Diversity\" with diverse background.",
+      "duration_seconds": 5
+    }
+  ]
+}

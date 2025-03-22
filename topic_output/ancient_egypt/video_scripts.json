@@ -1,0 +1,42 @@
+[
+  {
+    "title": "The Nile: Egypt's Lifeblood",
+    "script_file": "topic_output/ancient_egypt/scripts/The_Nile__Egypt_s_Lifeblood.json"
+  },
+  {
+    "title": "Deserts and Natural Barriers",
+    "script_file": "topic_output/ancient_egypt/scripts/Deserts_and_Natural_Barriers.json"
+  },
+  {
+    "title": "Egypt in Time: Kingdoms and Periods",
+    "script_file": "topic_output/ancient_egypt/scripts/Egypt_in_Time__Kingdoms_and_Periods.json"
+  },
+  {
+    "title": "Key Dynasties: Power and Change",
+    "script_file": "topic_output/ancient_egypt/scripts/Key_Dynasties__Power_and_Change.json"
+  },
+  {
+    "title": "Unlocking the Past: Egyptian Sources",
+    "script_file": "topic_output/ancient_egypt/scripts/Unlocking_the_Past__Egyptian_Sources.json"
+  },
+  {
+    "title": "Deciphering Hieroglyphs: The Rosetta Stone",
+    "script_file": "topic_output/ancient_egypt/scripts/Deciphering_Hieroglyphs__The_Rosetta_Stone.json"
+  },
+  {
+    "title": "Hieroglyphs: Pictures and Sounds",
+    "script_file": "topic_output/ancient_egypt/scripts/Hieroglyphs__Pictures_and_Sounds.json"
+  },
+  {
+    "title": "Reading Hieroglyphs: Basic Symbols",
+    "script_file": "topic_output/ancient_egypt/scripts/Reading_Hieroglyphs__Basic_Symbols.json"
+  },
+  {
+    "title": "Beyond Hieroglyphs: Hieratic and Demotic",
+    "script_file": "topic_output/ancient_egypt/scripts/Beyond_Hieroglyphs__Hieratic_and_Demotic.json"
+  },
+  {
+    "title": "Ma'at: Cosmic Order and Balance",
+    "script_file": "topic_output/ancient_egypt/scripts/Ma_at__Cosmic_Order_and_Balance.json"
+  }
+]

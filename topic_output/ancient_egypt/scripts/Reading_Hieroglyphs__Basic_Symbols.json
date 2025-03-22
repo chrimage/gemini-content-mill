@@ -1,0 +1,91 @@
+{
+  "title": "Hieroglyphs: Basic Symbols",
+  "description": "Unlock the secrets of Ancient Egypt! Learn to read basic hieroglyphs like the Ankh, Eye of Horus, and Scarab. #AncientEgypt #Hieroglyphs #Egyptology",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "Start deciphering! Explore the fascinating world of Ancient Egyptian hieroglyphs.",
+      "image_description": "Title card: \"Reading Hieroglyphs: Basic Symbols\" over an Egyptian background.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the video topic and grabs viewer attention."
+    },
+    {
+      "frame_id": 2,
+      "narration": "Hieroglyphs: ancient Egyptian writing using symbols, not just letters.",
+      "image_description": "Examples of hieroglyphic text from walls or papyrus.",
+      "duration_seconds": 5,
+      "educational_value": "Defines hieroglyphs and distinguishes them from alphabets."
+    },
+    {
+      "frame_id": 3,
+      "narration": "First, the Ankh. This symbol represents 'life' or 'eternal life'.",
+      "image_description": "Close-up of the Ankh symbol, clearly showing its shape.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the Ankh and its primary meaning."
+    },
+    {
+      "frame_id": 4,
+      "narration": "You'll often see the Ankh held by gods and pharaohs, symbolizing power.",
+      "image_description": "Egyptian art depicting gods or pharaohs holding Ankh symbols.",
+      "duration_seconds": 5,
+      "educational_value": "Shows the Ankh in its cultural and historical context."
+    },
+    {
+      "frame_id": 5,
+      "narration": "Next, the Eye of Horus. It symbolizes protection, health, and restoration.",
+      "image_description": "Close-up of the Eye of Horus symbol, highlighting its features.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the Eye of Horus and its meaning."
+    },
+    {
+      "frame_id": 6,
+      "narration": "Egyptians used the Eye of Horus for amulets and in tomb paintings for safety.",
+      "image_description": "Examples of Eye of Horus amulets and tomb paintings.",
+      "duration_seconds": 5,
+      "educational_value": "Shows the practical and symbolic use of the Eye of Horus."
+    },
+    {
+      "frame_id": 7,
+      "narration": "The Scarab beetle represents rebirth, transformation, and new beginnings.",
+      "image_description": "Close-up of the Scarab beetle symbol, emphasizing its form.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the Scarab and its symbolic meaning."
+    },
+    {
+      "frame_id": 8,
+      "narration": "Scarabs were often placed in tombs to ensure resurrection in the afterlife.",
+      "image_description": "Examples of scarab amulets and artifacts found in tombs.",
+      "duration_seconds": 5,
+      "educational_value": "Explains the Scarab's role in Egyptian funerary beliefs."
+    },
+    {
+      "frame_id": 9,
+      "narration": "So, we've learned Ankh for life, Eye of Horus for protection, Scarab for rebirth.",
+      "image_description": "Side-by-side display of Ankh, Eye of Horus, and Scarab symbols with labels.",
+      "duration_seconds": 5,
+      "educational_value": "Reinforces the meanings of the three key symbols."
+    },
+    {
+      "frame_id": 10,
+      "narration": "Understanding hieroglyphs unlocks the secrets of ancient Egyptian civilization.",
+      "image_description": "Montage of various Egyptian artifacts with hieroglyphs (temples, papyrus).",
+      "duration_seconds": 5,
+      "educational_value": "Explains the broader significance of hieroglyphs for history."
+    },
+    {
+      "frame_id": 11,
+      "narration": "Want to learn more? Explore further into the world of hieroglyphic writing!",
+      "image_description": "Text overlay: \"Learn More! [Link to resources]\" with Egyptian background.",
+      "duration_seconds": 5,
+      "educational_value": "Encourages further learning and provides direction."
+    },
+    {
+      "frame_id": 12,
+      "narration": "Continue your Egyptian adventure! Subscribe for more ancient history insights.",
+      "image_description": "End screen with channel logo, social media links, and subscribe button.",
+      "duration_seconds": 5,
+      "educational_value": "Promotes channel engagement and future content."
+    }
+  ],
+  "voice_style": "professor"
+}

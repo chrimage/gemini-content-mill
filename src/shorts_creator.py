@@ -19,8 +19,11 @@ import google.genai as genai
 import openai
 from dotenv import load_dotenv
 from google.genai import types
-from moviepy.editor import ImageClip, AudioFileClip, concatenate_videoclips, TextClip
 from PIL import Image
+
+# Defer heavy imports until actually needed
+# This speeds up startup and allows for error messages before these libraries load
+moviepy_imported = False
 
 # Load environment variables
 load_dotenv()
@@ -208,6 +211,8 @@ def parse_arguments():
                                 "nature_documentarian", "news_anchor", 
                                 "tech_enthusiast", "coach"],
                         help="Override the voice style for all segments")
+    parser.add_argument("--skip-video", action="store_true",
+                        help="Skip video assembly, just generate scripts, images and audio")
     
     args = parser.parse_args()
     
@@ -782,6 +787,23 @@ def assemble_video(frames_data, title):
     """Assemble the final video from images and audio."""
     print("Assembling video...")
     
+    # Import moviepy here rather than at the top level
+    # This allows the script to start quickly and only load these heavy libraries when needed
+    global moviepy_imported
+    if not moviepy_imported:
+        print("Loading video assembly libraries (this may take a moment)...")
+        try:
+            from moviepy.editor import ImageClip, AudioFileClip, concatenate_videoclips, TextClip
+            moviepy_imported = True
+            print("Video libraries loaded successfully!")
+        except ImportError as e:
+            print(f"Error loading video libraries: {e}")
+            print("Please make sure moviepy is installed correctly (pip install moviepy)")
+            return None
+    else:
+        # Import inside the function for local scope
+        from moviepy.editor import ImageClip, AudioFileClip, concatenate_videoclips, TextClip
+    
     clips = []
     total_duration = 0
     
@@ -789,15 +811,21 @@ def assemble_video(frames_data, title):
     target_width = 1080
     target_height = 1920
     
-    # Simplified approach - directly create clips from resized images
-    for frame in frames_data:
+    # First, resize all images and check audio
+    print("Preparing frames...")
+    prepared_frames = []
+    
+    for i, frame in enumerate(frames_data):
         try:
+            # Show progress
+            progress = f"[{i+1}/{len(frames_data)}]"
+            print(f"{progress} Preparing frame {frame['frame_id']}...", end="\r")
+            
             # Set up paths
             img_path = frame["image_path"]
             resized_path = output_dir / f"resized_frame_{frame['frame_id']}.png"
             
             # Resize using PIL directly to avoid MoviePy issues
-            from PIL import Image
             img = Image.open(img_path)
             
             # Create new image with correct dimensions
@@ -831,8 +859,28 @@ def assemble_video(frames_data, title):
                 # Image already has correct dimensions
                 frame_image_path = img_path
             
+            # Store prepared frame data
+            prepared_frames.append({
+                **frame,
+                "prepared_image_path": frame_image_path
+            })
+            
+        except Exception as e:
+            print(f"\nError preparing frame {frame.get('frame_id', '?')}: {e}")
+            import traceback
+            traceback.print_exc()
+    
+    print("\nCreating video clips...")
+    
+    # Now create all clips with the prepared frames
+    for i, frame in enumerate(prepared_frames):
+        try:
+            # Show progress
+            progress = f"[{i+1}/{len(prepared_frames)}]"
+            print(f"{progress} Processing frame {frame['frame_id']}...", end="\r")
+            
             # Create clip from the image
-            img_clip = ImageClip(frame_image_path, duration=frame.get("duration_seconds", 10))
+            img_clip = ImageClip(frame["prepared_image_path"], duration=frame.get("duration_seconds", 10))
             
             # Add audio if available
             if "audio_path" in frame and frame["audio_path"]:
@@ -842,9 +890,8 @@ def assemble_video(frames_data, title):
                     img_clip = img_clip.set_duration(audio_duration)
                     video_clip = img_clip.set_audio(audio_clip)
                     total_duration += audio_duration
-                    print(f"Frame {frame['frame_id']}: {audio_duration:.1f} seconds")
                 except Exception as audio_error:
-                    print(f"Error adding audio for frame {frame['frame_id']}: {audio_error}")
+                    print(f"\nError adding audio for frame {frame['frame_id']}: {audio_error}")
                     # Continue without audio
                     video_clip = img_clip
                     total_duration += img_clip.duration
@@ -855,9 +902,11 @@ def assemble_video(frames_data, title):
             clips.append(video_clip)
             
         except Exception as e:
-            print(f"Error adding frame {frame.get('frame_id', '?')}: {e}")
+            print(f"\nError adding frame {frame.get('frame_id', '?')}: {e}")
             import traceback
             traceback.print_exc()
+    
+    print("\n")  # Clear the progress line
     
     if not clips:
         print("No clips to assemble")
@@ -865,22 +914,27 @@ def assemble_video(frames_data, title):
     
     try:
         # Concatenate the clips - no resize needed since all images are already correct size
+        print(f"Joining {len(clips)} clips together...")
         final_clip = concatenate_videoclips(clips)
         
         # Create a safe filename
         safe_title = ''.join(c if c.isalnum() or c in '_- ' else '_' for c in title)
         output_path = output_dir / f"{safe_title.replace(' ', '_')}.mp4"
         
-        print("Rendering final video (this may take a moment)...")
+        print(f"Rendering final video (expected duration: {total_duration:.1f} seconds)...")
+        print("This may take a few minutes. Please be patient...")
+        
         final_clip.write_videofile(
             str(output_path), 
             codec='libx264', 
             audio_codec='aac',
-            fps=24
+            fps=24,
+            verbose=False,  # Reduce terminal spam
+            logger=None     # Disable moviepy's logger
         )
         
-        print(f"Video saved to {output_path}")
-        print(f"Total duration: {final_clip.duration:.1f} seconds")
+        print(f"✅ Video saved to {output_path}")
+        print(f"✅ Total duration: {final_clip.duration:.1f} seconds")
         return str(output_path)
         
     except Exception as e:
@@ -1122,15 +1176,22 @@ async def main():
         tasks.append(process_frame(frame, script['title'], args.voice, args.concept))
     frames_data = await asyncio.gather(*tasks)
     
-    # 4. Assemble the video
-    video_path = assemble_video(frames_data, script['title'])
-    
-    if video_path:
-        print(f"\n✅ Process complete! YouTube Shorts video created successfully.")
+    # 4. Assemble the video (if not skipped)
+    if args.skip_video:
+        print("\n🔄 Skipping video assembly as requested")
+        print(f"✅ Assets generated in: {output_dir}")
         print(f"Title: {script['title']}")
-        print(f"Output: {video_path}")
+        print("To create the video later, use:")
+        print(f"./professor_mode.sh --from-script {output_dir}/script.json")
     else:
-        print("\n❌ Video creation failed.")
+        video_path = assemble_video(frames_data, script['title'])
+        
+        if video_path:
+            print(f"\n✅ Process complete! YouTube Shorts video created successfully.")
+            print(f"Title: {script['title']}")
+            print(f"Output: {video_path}")
+        else:
+            print("\n❌ Video assembly failed. Assets were generated but video could not be created.")
 
 if __name__ == "__main__":
     asyncio.run(main())

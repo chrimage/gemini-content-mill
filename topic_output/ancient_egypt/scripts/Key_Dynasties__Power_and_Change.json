@@ -1,0 +1,91 @@
+{
+  "title": "Egypt's Dynasties: Power & Change",
+  "description": "Uncover the secrets of Ancient Egypt's powerful dynasties! Pyramids, empires, and foreign rule. #AncientEgypt #Dynasties #History",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "Explore the rise and fall of dynasties that shaped Egyptian history.",
+      "image_description": "Animated map of Ancient Egypt highlighting key areas, title card appears: 'Key Dynasties'.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the video topic and geographical context."
+    },
+    {
+      "frame_id": 2,
+      "narration": "Dynasties: ruling families passing power through generations.",
+      "image_description": "Simple animated family tree graphic illustrating dynastic succession with pharaoh icons.",
+      "duration_seconds": 5,
+      "educational_value": "Defines 'dynasty' for clear understanding."
+    },
+    {
+      "frame_id": 3,
+      "narration": "The Old Kingdom: Age of Pyramids, monumental construction began.",
+      "image_description": "Wide shot of the Giza pyramid complex under construction, showing workers and ramps.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the Old Kingdom and its defining feature: pyramids."
+    },
+    {
+      "frame_id": 4,
+      "narration": "Pyramids symbolized pharaohs' power, belief in afterlife, and order.",
+      "image_description": "Close-up view of the Great Pyramid, highlighting its scale and precision.",
+      "duration_seconds": 5,
+      "educational_value": "Explains the significance and purpose of pyramids."
+    },
+    {
+      "frame_id": 5,
+      "narration": "Old Kingdom declined due to internal strife and environmental changes.",
+      "image_description": "Time-lapse of pyramids slowly crumbling, transitioning to a desert landscape.",
+      "duration_seconds": 5,
+      "educational_value": "Shows the decline and fall of the Old Kingdom."
+    },
+    {
+      "frame_id": 6,
+      "narration": "New Kingdom: Egypt expanded, becoming a vast and wealthy empire.",
+      "image_description": "Animated map showing Egyptian territory expanding across the Middle East and Nubia.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the New Kingdom and its imperial nature."
+    },
+    {
+      "frame_id": 7,
+      "narration": "Pharaohs like Hatshepsut and Ramses II led Egypt to its peak.",
+      "image_description": "Images of statues of Hatshepsut and Ramses II, then scenes of Egyptian armies.",
+      "duration_seconds": 5,
+      "educational_value": "Highlights key New Kingdom pharaohs and their achievements."
+    },
+    {
+      "frame_id": 8,
+      "narration": "Empire brought riches, grand temples, and artistic flourishing.",
+      "image_description": "Visuals of opulent Egyptian treasures, Karnak Temple, and intricate artwork.",
+      "duration_seconds": 5,
+      "educational_value": "Showcases the prosperity and cultural achievements of the New Kingdom."
+    },
+    {
+      "frame_id": 9,
+      "narration": "New Kingdom weakened by internal conflicts and external pressures.",
+      "image_description": "Scenes of battles, internal unrest, and fading grandeur of temples.",
+      "duration_seconds": 5,
+      "educational_value": "Explains the factors leading to the New Kingdom's decline."
+    },
+    {
+      "frame_id": 10,
+      "narration": "Late Period: Foreign powers increasingly influenced Egyptian rule.",
+      "image_description": "Map showing foreign empires surrounding Egypt, subtle shift in Egyptian clothing styles.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the Late Period and increasing foreign influence."
+    },
+    {
+      "frame_id": 11,
+      "narration": "Persians, Greeks, Romans \u2013 all controlled Egypt in the Late Period.",
+      "image_description": "Portraits of Persian, Greek (Alexander the Great), and Roman rulers in Egyptian settings.",
+      "duration_seconds": 5,
+      "educational_value": "Illustrates specific foreign powers ruling Egypt."
+    },
+    {
+      "frame_id": 12,
+      "narration": "Dynasties shaped Egypt's legacy: pyramids, empire, and cultural exchange.",
+      "image_description": "Montage of iconic Egyptian artifacts and monuments, ending on a panoramic view of the Nile.",
+      "duration_seconds": 5,
+      "educational_value": "Summarizes the lasting impact of Egyptian dynasties."
+    }
+  ],
+  "voice_style": "professor"
+}

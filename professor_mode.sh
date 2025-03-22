@@ -24,6 +24,7 @@ function print_help {
   echo "  --max-videos [NUMBER] - Maximum number of videos to generate concepts for (default: 10)"
   echo "  --voice [VOICE]      - Voice to use for narration (nova, alloy, echo, fable, onyx, shimmer)"
   echo "  --style [STYLE]      - Override voice style (professor, excited_teacher, storyteller, etc.)"
+  echo "  --skip-video         - Skip video assembly, just generate scripts, images and audio"  
   echo "  --no-auto-generate   - Only generate topic hierarchy without creating videos"
   echo "  --help               - Show this help message"
   echo
@@ -45,6 +46,7 @@ generate_video_from_script() {
   VOICE_OPT="$2"
   OUTPUT_DIR="$3"
   STYLE_OPT="$4"
+  SKIP_VIDEO="$5"
   
   # Check if script exists
   if [ ! -f "$SCRIPT" ]; then
@@ -71,9 +73,14 @@ generate_video_from_script() {
     echo "🎙️ Using automatic voice style detection"
   fi
   
+  # Check if we should skip video assembly
+  if [ "$SKIP_VIDEO" = "--skip-video" ]; then
+    echo "🔄 Will skip video assembly (generating assets only)"
+  fi
+  
   # Run shorts_creator.py with the script
-  echo "🎬 Creating video..."
-  python3 src/shorts_creator.py --from-script "$SCRIPT" $VOICE_OPT $STYLE_OPT $OUTPUT_DIR_ARG
+  echo "🎬 Creating content..."
+  python3 src/shorts_creator.py --from-script "$SCRIPT" $VOICE_OPT $STYLE_OPT $OUTPUT_DIR_ARG $SKIP_VIDEO
   
   return $?
 }
@@ -102,6 +109,12 @@ if [ "$1" == "--generate-all" ]; then
     STYLE_OPTION="--style $STYLE"
   fi
   
+  # Check if we should skip video assembly
+  SKIP_VIDEO=""
+  if [[ "$*" == *"--skip-video"* ]]; then
+    SKIP_VIDEO="--skip-video"
+  fi
+  
   # Extract topic name from the file to create output directory
   TOPIC=$(cat topic_hierarchy.json | jq -r '.main_topic' | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
   
@@ -125,7 +138,7 @@ if [ "$1" == "--generate-all" ]; then
     echo "="*80
     
     # Generate the video from this script
-    if generate_video_from_script "$SCRIPT" "$VOICE_OPTION" "$OUTPUT_DIR" "$STYLE_OPTION"; then
+    if generate_video_from_script "$SCRIPT" "$VOICE_OPTION" "$OUTPUT_DIR" "$STYLE_OPTION" "$SKIP_VIDEO"; then
       SUCCESS_COUNT=$((SUCCESS_COUNT+1))
     fi
   done
@@ -165,7 +178,13 @@ if [ "$1" == "--from-script" ]; then
     STYLE_OPTION="--style $STYLE"
   fi
   
-  generate_video_from_script "$SCRIPT" "$VOICE_OPTION" "" "$STYLE_OPTION"
+  # Check if we should skip video assembly
+  SKIP_VIDEO=""
+  if [[ "$*" == *"--skip-video"* ]]; then
+    SKIP_VIDEO="--skip-video"
+  fi
+  
+  generate_video_from_script "$SCRIPT" "$VOICE_OPTION" "" "$STYLE_OPTION" "$SKIP_VIDEO"
   
   exit $?
 fi
@@ -183,6 +202,7 @@ MAX_VIDEOS=10
 AUTO_GENERATE=true
 VOICE_OPTION=""
 STYLE_OPTION=""
+SKIP_VIDEO=""
 
 # Process remaining arguments
 while [ "$#" -gt 0 ]; do
@@ -208,6 +228,10 @@ while [ "$#" -gt 0 ]; do
       STYLE="$2"
       STYLE_OPTION="--style $STYLE"
       shift 2
+      ;;
+    --skip-video)
+      SKIP_VIDEO="--skip-video"
+      shift
       ;;
     --no-auto-generate)
       AUTO_GENERATE=false
@@ -286,7 +310,7 @@ if [ "$AUTO_GENERATE" = true ]; then
     echo "="*80
     
     # Generate the video from this script with output to the topic's videos directory
-    if generate_video_from_script "$TOPIC_SCRIPT" "$VOICE_OPTION" "$VIDEOS_DIR" "$STYLE_OPTION"; then
+    if generate_video_from_script "$TOPIC_SCRIPT" "$VOICE_OPTION" "$VIDEOS_DIR" "$STYLE_OPTION" "$SKIP_VIDEO"; then
       SUCCESS_COUNT=$((SUCCESS_COUNT+1))
     fi
   done

@@ -1,0 +1,91 @@
+{
+  "title": "Beyond Hieroglyphs: Everyday Egyptian Scripts",
+  "description": "Uncover Hieratic & Demotic: the faster, everyday scripts of Ancient Egypt! #AncientEgypt #Hieroglyphs #History #Education",
+  "frames": [
+    {
+      "frame_id": 1,
+      "narration": "Think Egyptian writing is just hieroglyphs? Think again! Discover faster scripts.",
+      "image_description": "Open on impressive hieroglyphic wall, quickly transition to papyrus with Hieratic script.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces the idea of scripts beyond hieroglyphs."
+    },
+    {
+      "frame_id": 2,
+      "narration": "Meet Hieratic: simplified hieroglyphs, perfect for writing on papyrus.",
+      "image_description": "Close-up of Hieratic script on papyrus, highlighting its flowing, simplified forms.",
+      "duration_seconds": 5,
+      "educational_value": "Defines Hieratic and its primary writing surface."
+    },
+    {
+      "frame_id": 3,
+      "narration": "Scribes used Hieratic for speed, for everyday documents and letters.",
+      "image_description": "Visual of a scribe writing on papyrus with a reed pen, emphasizing speed.",
+      "duration_seconds": 5,
+      "educational_value": "Explains the purpose and users of Hieratic script."
+    },
+    {
+      "frame_id": 4,
+      "narration": "Centuries later, Demotic emerged: an even more cursive, faster script.",
+      "image_description": "Transition from Hieratic to Demotic script, showing the increased cursiveness.",
+      "duration_seconds": 5,
+      "educational_value": "Introduces Demotic as a further evolution of writing."
+    },
+    {
+      "frame_id": 5,
+      "narration": "Demotic became the script of daily life: trade, administration, and literature.",
+      "image_description": "Visuals representing daily life in ancient Egypt: market scene, administrative documents.",
+      "duration_seconds": 5,
+      "educational_value": "Explains the broader usage of Demotic in society."
+    },
+    {
+      "frame_id": 6,
+      "narration": "Hieratic and Demotic: scripts born from the need for faster writing.",
+      "image_description": "Split screen comparing Hieratic and Demotic side-by-side, highlighting differences.",
+      "duration_seconds": 5,
+      "educational_value": "Emphasizes the common origin and purpose of both scripts."
+    },
+    {
+      "frame_id": 7,
+      "narration": "Imagine writing lengthy texts in detailed hieroglyphs! Efficiency was key.",
+      "image_description": "Brief animation showing someone slowly writing hieroglyphs vs. quickly writing Hieratic.",
+      "duration_seconds": 5,
+      "educational_value": "Illustrates the practical need for simplified scripts."
+    },
+    {
+      "frame_id": 8,
+      "narration": "From formal temple inscriptions to quick notes, scripts evolved.",
+      "image_description": "Juxtaposition of hieroglyphic temple inscription and a Demotic letter.",
+      "duration_seconds": 5,
+      "educational_value": "Shows the range of scripts and their appropriate contexts."
+    },
+    {
+      "frame_id": 9,
+      "narration": "This evolution reveals the dynamic nature of ancient Egyptian culture.",
+      "image_description": "Timeline graphic showing Hieroglyphs -> Hieratic -> Demotic over centuries.",
+      "duration_seconds": 5,
+      "educational_value": "Connects script evolution to broader cultural changes."
+    },
+    {
+      "frame_id": 10,
+      "narration": "Studying Hieratic and Demotic unlocks everyday Egyptian voices.",
+      "image_description": "Researchers studying Hieratic and Demotic texts, highlighting their importance.",
+      "duration_seconds": 5,
+      "educational_value": "Emphasizes the value of these scripts for historical understanding."
+    },
+    {
+      "frame_id": 11,
+      "narration": "So, next time you see hieroglyphs, remember the scripts beyond!",
+      "image_description": "Return to image of hieroglyphs, then quickly pan to Hieratic and Demotic examples.",
+      "duration_seconds": 5,
+      "educational_value": "Reinforces the main takeaway: scripts beyond hieroglyphs exist."
+    },
+    {
+      "frame_id": 12,
+      "narration": "Explore more of Ancient Egypt! Subscribe for more historical insights.",
+      "image_description": "End screen with video title, channel logo, subscribe button, and related videos.",
+      "duration_seconds": 5,
+      "educational_value": "Call to action and promotes further learning."
+    }
+  ],
+  "voice_style": "professor"
+}
