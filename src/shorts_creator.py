@@ -750,25 +750,26 @@ async def generate_audio(text, frame_id, voice="nova", style=None, script_title=
     instructions = get_voice_styling_instructions(style, text, frame_id == 1)
     
     try:
-        # Direct approach - simpler and more reliable
-        response = await openai_client.audio.speech.create(
+        # Using the recommended streaming approach from OpenAI
+        async with openai_client.audio.speech.with_streaming_response.create(
             model="tts-1",
             voice=voice,
             input=text,
             speed=1.1,  # Slightly faster for Shorts format
             response_format="mp3",
             instructions=instructions
-        )
-        
-        # Get the binary content
-        response_bytes = await response.aread()
-        
-        # Save the audio
-        with open(audio_path, "wb") as f:
-            f.write(response_bytes)
-        
-        print(f"✓ Audio generated successfully for frame {frame_id}")
-        return str(audio_path)
+        ) as response:
+            # Collect the audio data
+            audio_data = b""
+            async for chunk in response.iter_bytes():
+                audio_data += chunk
+            
+            # Save the audio
+            with open(audio_path, "wb") as f:
+                f.write(audio_data)
+            
+            print(f"✓ Audio generated successfully for frame {frame_id}")
+            return str(audio_path)
         
     except Exception as e:
         print(f"❌ Error generating audio for frame {frame_id}: {e}")
