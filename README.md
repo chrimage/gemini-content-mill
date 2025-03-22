@@ -34,15 +34,15 @@ Create a YouTube Short from the command line:
 
 ### Options
 
-- `--duration SECONDS`: Target video duration in seconds (default: 30)
-- `--frames NUMBER`: Number of frames to generate (default: 3)
-- `--style STYLE`: Video style (default: engaging)
+- `--frames NUMBER`: Number of frames to generate (default: 2)
 - `--voice VOICE`: Voice to use for narration (choices: nova, alloy, echo, fable, onyx, shimmer, default: nova)
+
+The video duration is automatically calculated based on the number of frames (approximately 5 seconds per frame).
 
 ### Example
 
 ```bash
-./create_short.sh "Amazing facts about space" --duration 45 --frames 5 --style educational --voice nova
+./create_short.sh "Amazing facts about space" --frames 10 --voice nova
 ```
 
 ## Output

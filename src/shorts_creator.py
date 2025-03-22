@@ -190,14 +190,46 @@ def api_call_with_backoff(func, *args, max_retries=5, initial_delay=2.0, max_del
 def parse_arguments():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(description="Generate YouTube Shorts videos from a concept.")
-    parser.add_argument("concept", help="The video concept or topic")
-    parser.add_argument("--frames", type=int, default=2, 
-                        help="Number of frames to generate (default: 2)")
+    
+    # Create mutually exclusive group for concept vs from-script
+    input_group = parser.add_mutually_exclusive_group(required=True)
+    input_group.add_argument("--concept", help="The video concept or topic")
+    input_group.add_argument("--from-script", help="Path to a pre-generated script JSON file")
+    
+    parser.add_argument("--frames", type=int, default=12, 
+                        help="Number of frames/segments to generate (default: 12)")
     parser.add_argument("--voice", default="nova", 
                         choices=["nova", "alloy", "echo", "fable", "onyx", "shimmer"],
                         help="Voice to use for narration (default: nova)")
-    # Use fixed defaults for simplicity during testing
+    
     args = parser.parse_args()
+    
+    # Handle script-based approach
+    if args.from_script:
+        try:
+            with open(args.from_script, 'r') as f:
+                script_data = json.load(f)
+                
+            # If script doesn't specify concept, use title as concept
+            args.concept = script_data.get("concept", script_data.get("title", "Educational Video"))
+            
+            # Use exact number of frames from the script file
+            if "frames" in script_data:
+                args.frames = len(script_data["frames"])
+                
+            # Store the pre-loaded script
+            args.script_data = script_data
+        except Exception as e:
+            print(f"Error loading script file {args.from_script}: {e}")
+            sys.exit(1)
+    elif not args.concept:
+        # For compatibility with older usage patterns where concept was positional
+        if len(sys.argv) > 1 and not sys.argv[1].startswith('-'):
+            args.concept = sys.argv[1]
+        else:
+            parser.print_help()
+            sys.exit(1)
+    
     # Add fixed style and duration attributes
     args.style = "clear and direct"
     # Calculate duration based on number of frames (approx. 5 seconds per frame)
@@ -279,8 +311,47 @@ def generate_video_concept(concept, style, duration, frames):
         # Continue with script generation even if concept generation fails
         return f"A compelling {style} video about {concept}"
 
-def generate_script(concept, duration, frames, style, video_concept):
-    """Generate a video script using Gemini."""
+def generate_script(concept, duration, frames, style, video_concept, pre_loaded_script=None):
+    """Generate a video script using Gemini or load a pre-generated script."""
+    # If a pre-loaded script is provided, use it
+    if pre_loaded_script:
+        print(f"Using pre-generated script: {pre_loaded_script.get('title', 'Untitled')}")
+        
+        # Handle segment vs frame naming
+        if "segments" in pre_loaded_script and not "frames" in pre_loaded_script:
+            # Convert segments format to frames format
+            frames_data = []
+            for segment in pre_loaded_script["segments"]:
+                frames_data.append({
+                    "frame_id": segment.get("segment_id", segment.get("id", len(frames_data) + 1)),
+                    "narration": segment["narration"],
+                    "image_description": segment["image_description"],
+                    "duration_seconds": segment.get("duration_seconds", 5)
+                })
+            
+            script = {
+                "title": pre_loaded_script["title"],
+                "description": pre_loaded_script.get("description", f"Educational video about {concept}"),
+                "frames": frames_data
+            }
+        else:
+            # Script is already in the right format
+            script = pre_loaded_script
+        
+        # Ensure frames have duration_seconds
+        for frame in script["frames"]:
+            if "duration_seconds" not in frame:
+                frame["duration_seconds"] = 5
+        
+        # Save script to file
+        script_path = output_dir / "script.json"
+        with open(script_path, 'w') as f:
+            json.dump(script, f, indent=2)
+            
+        print(f"Script loaded with title: {script['title']}")
+        return script
+    
+    # Otherwise, generate a new script
     print("Generating script based on creative concept...")
     
     # Calculate values based on the desired duration and frames
@@ -837,11 +908,29 @@ async def main():
     """Main function to orchestrate the video creation process."""
     args = parse_arguments()
     
-    # 1. Generate creative concept with thinking model
-    video_concept = generate_video_concept(args.concept, args.style, args.duration, args.frames)
-    
-    # 2. Generate detailed script based on concept
-    script = generate_script(args.concept, args.duration, args.frames, args.style, video_concept)
+    # For pre-loaded script flow
+    if hasattr(args, 'script_data'):
+        # Get script title for the output directory
+        script_title = args.script_data.get('title', 'Educational Video')
+        
+        # Initialize the output directory with a name based on the script title
+        safe_title = ''.join(c if c.isalnum() or c in '_- ' else '_' for c in script_title)
+        timestamp = time.strftime("%Y%m%d_%H%M%S")
+        global output_dir
+        output_dir = Path(f"output/{safe_title.replace(' ', '_')}_{timestamp}")
+        output_dir.mkdir(parents=True, exist_ok=True)
+        print(f"Created output directory: {output_dir}")
+        
+        # Skip concept generation, use the pre-loaded script
+        script = generate_script(args.concept, args.duration, args.frames, args.style, 
+                                None, args.script_data)
+    else:
+        # Standard flow - generate concept and script
+        # 1. Generate creative concept with thinking model
+        video_concept = generate_video_concept(args.concept, args.style, args.duration, args.frames)
+        
+        # 2. Generate detailed script based on concept
+        script = generate_script(args.concept, args.duration, args.frames, args.style, video_concept)
     
     # 3. Process each frame (generate image and audio in parallel)
     print("Processing frames...")
@@ -852,11 +941,11 @@ async def main():
     video_path = assemble_video(frames_data, script['title'])
     
     if video_path:
-        print(f"\nProcess complete! YouTube Shorts video created successfully.")
+        print(f"\n✅ Process complete! YouTube Shorts video created successfully.")
         print(f"Title: {script['title']}")
         print(f"Output: {video_path}")
     else:
-        print("\nVideo creation failed.")
+        print("\n❌ Video creation failed.")
 
 if __name__ == "__main__":
     asyncio.run(main())

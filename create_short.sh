@@ -24,4 +24,4 @@ else
 fi
 
 # Run the shorts creator with all arguments passed to this script, plus any defaults
-python3 src/shorts_creator.py "$@" $FRAMES
+python3 src/shorts_creator.py --concept "$1" ${@:2} $FRAMES
