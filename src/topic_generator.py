@@ -242,10 +242,20 @@ def refine_video_concept(topic, concept):
     And these key points:
     {json.dumps(concept['key_points'], indent=2)}
     
+    First, determine the most appropriate voice style for this content. Choose from:
+    - "excited_teacher": Enthusiastic educator sharing fascinating information
+    - "professor": Authoritative yet approachable academic expert
+    - "storyteller": Warm, engaging narrator sharing fascinating tales
+    - "nature_documentarian": Observer sharing fascinating natural discoveries
+    - "news_anchor": Polished, credible information presenter
+    - "tech_enthusiast": Tech-savvy expert sharing exciting innovations
+    - "coach": Motivational, supportive expert guiding skill development
+    
     Create a detailed segment-by-segment outline with:
     1. A catchy, descriptive title (60 characters max)
-    2. Exactly 12 segments
-    3. Each segment containing:
+    2. Overall voice style that best matches the content
+    3. Exactly 12 segments
+    4. Each segment containing:
        - Precise narration text (10-15 words)
        - Clear image description (what should be shown visually)
        - Educational value (what the viewer learns)
@@ -254,6 +264,7 @@ def refine_video_concept(topic, concept):
     {{
       "title": "Catchy Video Title",
       "description": "Brief YouTube description with #hashtags",
+      "voice_style": "professor", // Choose the most appropriate style from the list above
       "segments": [
         {{
           "segment_id": 1,
@@ -312,16 +323,30 @@ def convert_to_shorts_script(outline):
         "frames": []
     }
     
+    # Include voice style if available
+    if "voice_style" in outline:
+        shorts_script["voice_style"] = outline["voice_style"]
+    
     # Default duration for each segment
     duration_seconds = 5
     
     for segment in outline["segments"]:
-        shorts_script["frames"].append({
+        frame = {
             "frame_id": segment["segment_id"],
             "narration": segment["narration"],
             "image_description": segment["image_description"],
             "duration_seconds": duration_seconds
-        })
+        }
+        
+        # Include educational value if available
+        if "educational_value" in segment:
+            frame["educational_value"] = segment["educational_value"]
+        
+        # Add segment-specific style if available
+        if "style" in segment:
+            frame["style"] = segment["style"]
+            
+        shorts_script["frames"].append(frame)
     
     return shorts_script
 

@@ -23,6 +23,7 @@ function print_help {
   echo "  --breadth [NUMBER]   - Number of subtopics per topic (default: 5)"
   echo "  --max-videos [NUMBER] - Maximum number of videos to generate concepts for (default: 10)"
   echo "  --voice [VOICE]      - Voice to use for narration (nova, alloy, echo, fable, onyx, shimmer)"
+  echo "  --style [STYLE]      - Override voice style (professor, excited_teacher, storyteller, etc.)"
   echo "  --no-auto-generate   - Only generate topic hierarchy without creating videos"
   echo "  --help               - Show this help message"
   echo
@@ -43,6 +44,7 @@ generate_video_from_script() {
   SCRIPT="$1"
   VOICE_OPT="$2"
   OUTPUT_DIR="$3"
+  STYLE_OPT="$4"
   
   # Check if script exists
   if [ ! -f "$SCRIPT" ]; then
@@ -60,9 +62,18 @@ generate_video_from_script() {
     OUTPUT_DIR_ARG="--output-dir $OUTPUT_DIR"
   fi
   
+  # Show voice style info
+  if [ -n "$STYLE_OPT" ]; then
+    echo "🎙️ Using voice style: $(echo $STYLE_OPT | cut -d' ' -f2)"
+  elif [ -f "$SCRIPT" ] && [ "$(cat "$SCRIPT" | jq 'has("voice_style")')" == "true" ]; then
+    echo "🎙️ Script-defined voice style: $(cat "$SCRIPT" | jq -r '.voice_style')"
+  else
+    echo "🎙️ Using automatic voice style detection"
+  fi
+  
   # Run shorts_creator.py with the script
   echo "🎬 Creating video..."
-  python3 src/shorts_creator.py --from-script "$SCRIPT" $VOICE_OPT $OUTPUT_DIR_ARG
+  python3 src/shorts_creator.py --from-script "$SCRIPT" $VOICE_OPT $STYLE_OPT $OUTPUT_DIR_ARG
   
   return $?
 }
@@ -82,6 +93,13 @@ if [ "$1" == "--generate-all" ]; then
   if [[ "$*" == *"--voice"* ]]; then
     VOICE=$(echo "$*" | grep -oP '(?<=--voice )[^ ]+')
     VOICE_OPTION="--voice $VOICE"
+  fi
+  
+  # Extract style option if provided
+  STYLE_OPTION=""
+  if [[ "$*" == *"--style"* ]]; then
+    STYLE=$(echo "$*" | grep -oP '(?<=--style )[^ ]+')
+    STYLE_OPTION="--style $STYLE"
   fi
   
   # Extract topic name from the file to create output directory
@@ -107,7 +125,7 @@ if [ "$1" == "--generate-all" ]; then
     echo "="*80
     
     # Generate the video from this script
-    if generate_video_from_script "$SCRIPT" "$VOICE_OPTION" "$OUTPUT_DIR"; then
+    if generate_video_from_script "$SCRIPT" "$VOICE_OPTION" "$OUTPUT_DIR" "$STYLE_OPTION"; then
       SUCCESS_COUNT=$((SUCCESS_COUNT+1))
     fi
   done
@@ -140,7 +158,14 @@ if [ "$1" == "--from-script" ]; then
     VOICE_OPTION="--voice $VOICE"
   fi
   
-  generate_video_from_script "$SCRIPT" "$VOICE_OPTION"
+  # Extract style option if provided
+  STYLE_OPTION=""
+  if [[ "$*" == *"--style"* ]]; then
+    STYLE=$(echo "$*" | grep -oP '(?<=--style )[^ ]+')
+    STYLE_OPTION="--style $STYLE"
+  fi
+  
+  generate_video_from_script "$SCRIPT" "$VOICE_OPTION" "" "$STYLE_OPTION"
   
   exit $?
 fi
@@ -157,6 +182,7 @@ BREADTH=5
 MAX_VIDEOS=10
 AUTO_GENERATE=true
 VOICE_OPTION=""
+STYLE_OPTION=""
 
 # Process remaining arguments
 while [ "$#" -gt 0 ]; do
@@ -176,6 +202,11 @@ while [ "$#" -gt 0 ]; do
     --voice)
       VOICE="$2"
       VOICE_OPTION="--voice $VOICE"
+      shift 2
+      ;;
+    --style)
+      STYLE="$2"
+      STYLE_OPTION="--style $STYLE"
       shift 2
       ;;
     --no-auto-generate)
@@ -255,7 +286,7 @@ if [ "$AUTO_GENERATE" = true ]; then
     echo "="*80
     
     # Generate the video from this script with output to the topic's videos directory
-    if generate_video_from_script "$TOPIC_SCRIPT" "$VOICE_OPTION" "$VIDEOS_DIR"; then
+    if generate_video_from_script "$TOPIC_SCRIPT" "$VOICE_OPTION" "$VIDEOS_DIR" "$STYLE_OPTION"; then
       SUCCESS_COUNT=$((SUCCESS_COUNT+1))
     fi
   done

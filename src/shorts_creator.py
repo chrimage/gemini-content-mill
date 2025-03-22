@@ -203,6 +203,11 @@ def parse_arguments():
                         help="Voice to use for narration (default: nova)")
     parser.add_argument("--output-dir", 
                         help="Custom directory to save output files (default: auto-generated)")
+    parser.add_argument("--style", 
+                        choices=["professor", "excited_teacher", "storyteller", 
+                                "nature_documentarian", "news_anchor", 
+                                "tech_enthusiast", "coach"],
+                        help="Override the voice style for all segments")
     
     args = parser.parse_args()
     
@@ -718,8 +723,8 @@ def create_text_image(frame, title, image_path):
     img.save(image_path)
     print(f"Created enhanced text image for frame {frame['frame_id']}")
 
-async def generate_audio(text, frame_id, voice="nova"):
-    """Generate audio for narration using OpenAI's TTS."""
+async def generate_audio(text, frame_id, voice="nova", style=None, script_title=None, topic=None):
+    """Generate audio for narration using OpenAI's TTS with custom voice styling."""
     audio_path = output_dir / f"audio_{frame_id}.mp3"
     
     # Skip if audio already exists
@@ -737,24 +742,12 @@ async def generate_audio(text, frame_id, voice="nova"):
         print(f"🔊 Converting text to speech{dots}{spaces}", end="\r", flush=True)
     print("")
     
-    # Prepare the voice style instruction based on the narration length
-    # Use different instructions for different narration lengths
-    if len(text) < 30:
-        # For very short narration, use a more energetic style
-        instructions = """
-        Voice Affect: Energetic and engaging, like a TikTok creator.
-        Tone: Enthusiastic and attention-grabbing.
-        Pacing: Quick but clear, with emphasis on key words.
-        Emotion: Express excitement and interest to grab attention.
-        """
-    else:
-        # For longer narration, use a more measured style
-        instructions = """
-        Voice Affect: Conversational and engaging, like a professional YouTuber.
-        Tone: Clear and friendly, with natural emphasis on key points.
-        Pacing: Dynamic - slower for important concepts, slightly faster for transitions.
-        Emotion: Express genuine interest in the topic with subtle enthusiasm.
-        """
+    # Determine the best voice style based on content analysis
+    if style is None:
+        style = detect_content_style(text, script_title, topic)
+    
+    # Get voice styling instructions based on the detected or provided style
+    instructions = get_voice_styling_instructions(style, text, frame_id == 1)
     
     try:
         # Direct approach - simpler and more reliable
@@ -895,10 +888,176 @@ def assemble_video(frames_data, title):
         traceback.print_exc()
         return None
 
-async def process_frame(frame, script_title, voice):
+def detect_content_style(text, title=None, topic=None):
+    """
+    Detect the most appropriate voice style based on content analysis.
+    Returns a string representing the detected content style.
+    """
+    # Default to standard educational style
+    default_style = "professor"
+    
+    # Combine all text for analysis
+    full_text = f"{title or ''} {topic or ''} {text or ''}".lower()
+    
+    # Define style indicators with keywords and phrases
+    style_indicators = {
+        "excited_teacher": [
+            "amazing", "incredible", "fascinating", "wow", "mind-blowing", 
+            "spectacular", "unbelievable", "exciting", "wonder", "discovery",
+            "breakthrough", "revolutionary", "game-changing", "stunning"
+        ],
+        "professor": [
+            "research", "study", "evidence", "data", "analysis", "theory", 
+            "hypothesis", "experiment", "academic", "science", "literature", 
+            "investigate", "examine", "concept", "framework", "scholars"
+        ],
+        "storyteller": [
+            "story", "journey", "adventure", "once upon a time", "legend", "tale",
+            "historical", "ancient", "long ago", "discover", "explore", "civilization", 
+            "culture", "empire", "kingdom"
+        ],
+        "nature_documentarian": [
+            "nature", "wildlife", "animal", "plant", "ecosystem", "environment", 
+            "species", "habitat", "evolution", "biology", "ocean", "forest", 
+            "predator", "survival", "adaptation"
+        ],
+        "news_anchor": [
+            "breaking", "report", "today", "recently", "according to", "experts say",
+            "studies show", "research indicates", "statistics", "analysis", "data shows",
+            "development", "update", "latest"
+        ],
+        "tech_enthusiast": [
+            "technology", "innovation", "digital", "computer", "internet", "app", 
+            "software", "hardware", "device", "algorithm", "programming", "code", 
+            "tech", "smart", "future", "ai", "robot", "virtual"
+        ],
+        "coach": [
+            "improve", "practice", "training", "skill", "technique", "strategy", 
+            "performance", "challenge", "achieve", "goal", "success", "motivation", 
+            "discipline", "potential", "develop", "progress"
+        ]
+    }
+    
+    # Check for style keywords in the content
+    style_scores = {style: 0 for style in style_indicators}
+    
+    for style, keywords in style_indicators.items():
+        for keyword in keywords:
+            if keyword in full_text:
+                style_scores[style] += 1
+    
+    # Find the highest scoring style
+    best_style = max(style_scores.items(), key=lambda x: x[1])
+    
+    # If we found a good match (at least 2 keywords), use it
+    if best_style[1] >= 2:
+        return best_style[0]
+    
+    # Otherwise, use default style
+    return default_style
+
+def get_voice_styling_instructions(style, text, is_first_frame=False):
+    """
+    Get voice styling instructions based on the detected style.
+    Returns a string with detailed instructions for the TTS model.
+    """
+    # Define voice styling instructions for different content types
+    style_instructions = {
+        "excited_teacher": """
+            Voice Affect: Excited, passionate educator sharing fascinating information.
+            Tone: Enthusiastic and captivating, with genuine wonder in your voice.
+            Pacing: Dynamic - emphasize key concepts with slight pauses before important reveals.
+            Emotion: Express authentic excitement about the topic, as if sharing your favorite subject.
+            Performance Notes: Imagine you're teaching your favorite topic to students who are finally grasping a difficult concept. Use upward inflection for questions, emphasize key terms, and vary your tone to maintain engagement.
+        """,
+        
+        "professor": """
+            Voice Affect: Authoritative yet approachable academic expert.
+            Tone: Clear, measured, and thoughtful with subtle enthusiasm for the subject matter.
+            Pacing: Deliberate - take time with complex concepts, emphasize key terms, use strategic pauses.
+            Emotion: Convey intellectual curiosity and deep knowledge of the subject.
+            Performance Notes: Imagine you're a beloved university professor giving a guest lecture to an engaged audience. Speak with confidence and gravitas, but remain accessible. Slightly emphasize important technical terms.
+        """,
+        
+        "storyteller": """
+            Voice Affect: Warm, engaging storyteller sharing fascinating tales.
+            Tone: Rich, inviting, and slightly dramatic at key moments.
+            Pacing: Varied - slow down for important details, quicken for action, use pauses for effect.
+            Emotion: Express wonder, curiosity, and occasional awe at surprising elements.
+            Performance Notes: Imagine you're sharing fascinating historical stories around a campfire. Draw listeners in with a slightly hushed tone at intriguing parts, and open up with enthusiasm during revelations.
+        """,
+        
+        "nature_documentarian": """
+            Voice Affect: Observant, reverent nature expert sharing fascinating discoveries.
+            Tone: Clear, measured, with well-placed emphasis and occasional hushed wonder.
+            Pacing: Deliberate - speak clearly with respect for the subject, using pauses to emphasize natural wonders.
+            Emotion: Express genuine fascination with natural phenomena and subtle awe at remarkable adaptations.
+            Performance Notes: Channel the measured yet deeply engaged tone of a wildlife documentary presenter. Speak with authority but also convey genuine appreciation for nature's complexity.
+        """,
+        
+        "news_anchor": """
+            Voice Affect: Polished, credible information presenter.
+            Tone: Clear, professional, and well-articulated with excellent diction.
+            Pacing: Consistent and measured, with emphasis on key facts.
+            Emotion: Express neutral interest with subtle emphasis on important information.
+            Performance Notes: Imagine you're delivering important information on a reputable news broadcast. Maintain excellent articulation and a steady, authoritative tone while ensuring the information is delivered clearly and concisely.
+        """,
+        
+        "tech_enthusiast": """
+            Voice Affect: Tech-savvy expert sharing exciting innovations.
+            Tone: Energetic, informed, with a modern, digital-age feel.
+            Pacing: Quick and dynamic, with emphasis on cutting-edge concepts.
+            Emotion: Express excitement about technological possibilities and innovations.
+            Performance Notes: Channel the enthusiasm of a tech conference keynote presenter. Be forward-looking and optimistic, with slight emphasis on technical terms and a conversational but knowledgeable approach.
+        """,
+        
+        "coach": """
+            Voice Affect: Motivational, supportive expert guiding skill development.
+            Tone: Encouraging, energetic, and action-oriented.
+            Pacing: Dynamic with emphasis on key instructions and takeaways.
+            Emotion: Express confidence, positivity, and belief in the audience's ability to improve.
+            Performance Notes: Imagine you're a respected coach guiding someone to improve their skills. Use a slightly stronger tone for important guidance, emphasize action words, and maintain an encouraging energy throughout.
+        """
+    }
+    
+    # Get the appropriate instruction based on style
+    instruction = style_instructions.get(style, style_instructions["professor"])
+    
+    # Add special instructions for the first frame (intro)
+    if is_first_frame:
+        instruction += """
+            For this opening segment: Capture attention immediately with a slightly more energetic delivery.
+            Create a strong first impression with clear articulation and engaging tone.
+            Introduce the topic with subtle excitement that invites continued viewing.
+        """
+    
+    # Add special instructions for very short text
+    if len(text) < 30:
+        instruction += """
+            For this short segment: Deliver these few words with precision and emphasis.
+            Make each word count through careful articulation and appropriate weight.
+            Use a slightly slower pace to ensure the brief message lands effectively.
+        """
+    
+    return instruction
+
+async def process_frame(frame, script_title, voice, topic=None):
     """Process a single frame: generate image and audio."""
     image_path = await generate_image(frame, script_title)
-    audio_path = await generate_audio(frame["narration"], frame["frame_id"], voice)
+    
+    # Detect style from frame content if available
+    style = None
+    if "style" in frame:
+        style = frame["style"]
+    
+    audio_path = await generate_audio(
+        frame["narration"], 
+        frame["frame_id"], 
+        voice, 
+        style, 
+        script_title,
+        topic
+    )
     
     return {
         **frame,
@@ -941,9 +1100,25 @@ async def main():
         # 2. Generate detailed script based on concept
         script = generate_script(args.concept, args.duration, args.frames, args.style, video_concept)
     
+    # Set global voice style if specified on command line
+    global_style = None
+    if args.style:
+        global_style = args.style
+        print(f"🎙️ Using voice style override: {global_style}")
+    elif "voice_style" in script:
+        global_style = script["voice_style"]
+        print(f"🎙️ Using script-defined voice style: {global_style}")
+    else:
+        print("🎙️ Using automatic voice style detection per segment")
+
     # 3. Process each frame (generate image and audio in parallel)
     print("Processing frames...")
-    tasks = [process_frame(frame, script['title'], args.voice) for frame in script['frames']]
+    tasks = []
+    for frame in script['frames']:
+        # Apply global style override if specified
+        if global_style and 'style' not in frame:
+            frame['style'] = global_style
+        tasks.append(process_frame(frame, script['title'], args.voice, args.concept))
     frames_data = await asyncio.gather(*tasks)
     
     # 4. Assemble the video
